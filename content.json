@@ -1,0 +1,99 @@
+{
+  "site": {
+    "name": "Himanshu Chandelkar",
+    "title": "B.Com (Computer Applications) Student at Jaywanti Haksar Post Graduation College, Betul",
+    "location": "Betul, Madhya Pradesh, India",
+    "domain": "himanshuchandelkar.social"
+  },
+  "about": {
+    "heading": "A little about me.",
+    "paragraphs": [
+      "I am currently pursuing a Bachelor of Commerce (Computer Applications) with a strong interest in business, finance, and technology. My academic journey combines accounting, taxation, business law, e-commerce, and digital marketing while I continue to explore emerging technologies such as artificial intelligence and blockchain.",
+      "I enjoy learning how technology is transforming businesses and financial systems, and I am focused on continuously developing practical skills through academic coursework and self-learning.",
+      "I am always open to connecting with professionals and fellow learners who share an interest in business, finance, and technology."
+    ]
+  },
+  "education": [
+    {
+      "current": true,
+      "title": "B.Com (Computer Applications)",
+      "institution": "J.H. Govt. P.G. College, Betul",
+      "period": "Jul 2025 \u2014 Present",
+      "detail": "Currently pursuing a Bachelor of Commerce (Computer Applications), developing knowledge in accounting, finance, business, technology, e-commerce, digital marketing, and taxation through academic coursework and practical learning."
+    },
+    {
+      "current": false,
+      "title": "Higher Secondary (XII), Commerce",
+      "institution": "St. Thomas Mission HR. Sec. School, Amla",
+      "period": "Jun 2023 \u2014 Apr 2025",
+      "detail": "Developed a strong foundation in accounting, business studies, economics, and communication, providing the basis for higher studies in commerce and finance."
+    },
+    {
+      "current": false,
+      "title": "Secondary School (X)",
+      "institution": "St. Thomas Mission HR. Sec. School, Amla",
+      "period": "Mar 2022 \u2014 May 2023",
+      "detail": "Completed secondary education with a strong academic foundation across mathematics, science, social studies, and languages, preparing for higher secondary studies in commerce."
+    }
+  ],
+  "interests": [
+    {
+      "title": "Finance & Financial Markets",
+      "detail": "Interested in finance, financial markets, investments, and understanding how financial systems work."
+    },
+    {
+      "title": "Technology",
+      "detail": "Exploring technology and the ways digital tools are changing businesses and financial systems."
+    },
+    {
+      "title": "Web3 & Blockchain",
+      "detail": "Interested in blockchain technology, decentralized applications, and the broader Web3 ecosystem."
+    }
+  ],
+  "socials": [
+    {
+      "name": "Instagram",
+      "handle": "@himanshuchandelkar",
+      "url": "https://www.instagram.com/himanshuchandelkar/"
+    },
+    {
+      "name": "X",
+      "handle": "@0x_HimanshuX",
+      "url": "https://x.com/0x_HimanshuX"
+    },
+    {
+      "name": "LinkedIn",
+      "handle": "himanshuchandelkar",
+      "url": "https://www.linkedin.com/in/himanshuchandelkar/"
+    },
+    {
+      "name": "GitHub",
+      "handle": "himanshuchandelkar",
+      "url": "https://github.com/himanshuchandelkar"
+    },
+    {
+      "name": "Email",
+      "handle": "contacthimanshuyt@gmail.com",
+      "url": "mailto:contacthimanshuyt@gmail.com"
+    }
+  ],
+  "settings": {
+    "accent": "#b9ff66",
+    "background": "#090a0c",
+    "text": "#f4f5f7",
+    "muted": "#9da3ad",
+    "show": {
+      "hero": true,
+      "about": true,
+      "education": true,
+      "interests": true,
+      "connect": true
+    },
+    "sectionOrder": [
+      "about",
+      "education",
+      "interests",
+      "connect"
+    ]
+  }
+}
