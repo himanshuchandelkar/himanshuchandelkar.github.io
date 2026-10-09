@@ -1,9 +1,13 @@
 {
   "site": {
     "name": "Himanshu Chandelkar",
-    "title": "B.Com (Computer Applications) Student at Jaywanti Haksar Post Graduation College, Betul",
+    "title": "Commerce student exploring finance and technology.",
+    "goal": "Currently focused on internship opportunities in finance-tech and digital business.",
     "location": "Betul, Madhya Pradesh, India",
-    "domain": "himanshuchandelkar.social"
+    "domain": "himanshuchandelkar.social",
+    "primaryCtaLabel": "View Projects",
+    "primaryCtaTarget": "#projects",
+    "resumeUrl": "./resume.pdf"
   },
   "about": {
     "heading": "A little about me.",
@@ -18,22 +22,36 @@
       "current": true,
       "title": "B.Com (Computer Applications)",
       "institution": "J.H. Govt. P.G. College, Betul",
-      "period": "Jul 2025 \u2014 Present",
+      "period": "Jul 2025 — Present",
       "detail": "Currently pursuing a Bachelor of Commerce (Computer Applications), developing knowledge in accounting, finance, business, technology, e-commerce, digital marketing, and taxation through academic coursework and practical learning."
     },
     {
       "current": false,
       "title": "Higher Secondary (XII), Commerce",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
-      "period": "Jun 2023 \u2014 Apr 2025",
+      "period": "Jun 2023 — Apr 2025",
       "detail": "Developed a strong foundation in accounting, business studies, economics, and communication, providing the basis for higher studies in commerce and finance."
     },
     {
       "current": false,
       "title": "Secondary School (X)",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
-      "period": "Mar 2022 \u2014 May 2023",
+      "period": "Mar 2022 — May 2023",
       "detail": "Completed secondary education with a strong academic foundation across mathematics, science, social studies, and languages, preparing for higher secondary studies in commerce."
+    }
+  ],
+  "skills": [
+    {
+      "category": "Finance",
+      "items": ["Financial Accounting", "Tax Basics", "Business Law", "Market Research"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Excel", "Google Sheets", "Canva", "Notion"]
+    },
+    {
+      "category": "Tech Stack",
+      "items": ["HTML", "CSS", "JavaScript", "Git & GitHub"]
     }
   ],
   "interests": [
@@ -48,6 +66,29 @@
     {
       "title": "Web3 & Blockchain",
       "detail": "Interested in blockchain technology, decentralized applications, and the broader Web3 ecosystem."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Personal Portfolio Website",
+      "summary": "Built and deployed a responsive portfolio website to present education, skills, and profile links.",
+      "tools": "HTML, CSS, JavaScript, GitHub Pages",
+      "outcome": "Created a maintainable online profile with editable content and faster updates.",
+      "url": "https://github.com/himanshuchandelkar/himanshuchandelkar.github.io"
+    },
+    {
+      "title": "Commerce Notes Hub",
+      "summary": "Organized semester-wise commerce notes and references in a structured repository for quick revision.",
+      "tools": "Google Docs, Notion, GitHub",
+      "outcome": "Improved revision speed and made shared study resources easier to navigate.",
+      "url": ""
+    },
+    {
+      "title": "Market Observation Tracker",
+      "summary": "Tracked daily market observations and company updates to improve consistency in financial learning.",
+      "tools": "Google Sheets, Data Visualization",
+      "outcome": "Built a repeatable workflow for analyzing trends and summarizing insights.",
+      "url": ""
     }
   ],
   "socials": [
@@ -86,13 +127,17 @@
       "hero": true,
       "about": true,
       "education": true,
+      "skills": true,
       "interests": true,
+      "projects": true,
       "connect": true
     },
     "sectionOrder": [
       "about",
       "education",
+      "skills",
       "interests",
+      "projects",
       "connect"
     ]
   }
