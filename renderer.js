@@ -4,7 +4,6 @@
     education: "Education",
     skills: "Skills",
     interests: "Interests",
-    projects: "Projects",
     connect: "Connect"
   };
 
