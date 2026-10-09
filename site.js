@@ -68,29 +68,6 @@ const fallback = {
       "detail": "Interested in blockchain technology, decentralized applications, and the broader Web3 ecosystem."
     }
   ],
-  "projects": [
-    {
-      "title": "Personal Portfolio Website",
-      "summary": "Built and deployed a responsive portfolio website to present education, skills, and profile links.",
-      "tools": "HTML, CSS, JavaScript, GitHub Pages",
-      "outcome": "Created a maintainable online profile with editable content and faster updates.",
-      "url": "https://github.com/himanshuchandelkar/himanshuchandelkar.github.io"
-    },
-    {
-      "title": "Commerce Notes Hub",
-      "summary": "Organized semester-wise commerce notes and references in a structured repository for quick revision.",
-      "tools": "Google Docs, Notion, GitHub",
-      "outcome": "Improved revision speed and made shared study resources easier to navigate.",
-      "url": ""
-    },
-    {
-      "title": "Market Observation Tracker",
-      "summary": "Tracked daily market observations and company updates to improve consistency in financial learning.",
-      "tools": "Google Sheets, Data Visualization",
-      "outcome": "Built a repeatable workflow for analyzing trends and summarizing insights.",
-      "url": ""
-    }
-  ],
   "socials": [
     {
       "name": "Instagram",
