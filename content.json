@@ -2,8 +2,12 @@
   "site": {
     "name": "Himanshu Chandelkar",
     "title": "B.Com (Computer Applications) Student at Jaywanti Haksar Post Graduation College, Betul",
+    "goal": "Currently focused on internship opportunities in finance-tech and digital business.",
     "location": "Betul, Madhya Pradesh, India",
-    "domain": "himanshuchandelkar.social"
+    "domain": "himanshuchandelkar.social",
+    "primaryCtaLabel": "Connect",
+    "primaryCtaTarget": "#connect",
+    "resumeUrl": "./resume.pdf"
   },
   "about": {
     "heading": "A little about me.",
@@ -18,22 +22,36 @@
       "current": true,
       "title": "B.Com (Computer Applications)",
       "institution": "J.H. Govt. P.G. College, Betul",
-      "period": "Jul 2025 \u2014 Present",
+      "period": "Jul 2025 — Present",
       "detail": "Currently pursuing a Bachelor of Commerce (Computer Applications), developing knowledge in accounting, finance, business, technology, e-commerce, digital marketing, and taxation through academic coursework and practical learning."
     },
     {
       "current": false,
       "title": "Higher Secondary (XII), Commerce",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
-      "period": "Jun 2023 \u2014 Apr 2025",
+      "period": "Jun 2023 — Apr 2025",
       "detail": "Developed a strong foundation in accounting, business studies, economics, and communication, providing the basis for higher studies in commerce and finance."
     },
     {
       "current": false,
       "title": "Secondary School (X)",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
-      "period": "Mar 2022 \u2014 May 2023",
+      "period": "Mar 2022 — May 2023",
       "detail": "Completed secondary education with a strong academic foundation across mathematics, science, social studies, and languages, preparing for higher secondary studies in commerce."
+    }
+  ],
+  "skills": [
+    {
+      "category": "Finance",
+      "items": ["Financial Accounting", "Business Law"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Google Sheets"]
+    },
+    {
+      "category": "Tech Stack",
+      "items": ["Git & GitHub"]
     }
   ],
   "interests": [
@@ -86,12 +104,15 @@
       "hero": true,
       "about": true,
       "education": true,
+      "skills": true,
       "interests": true,
+      "projects": true,
       "connect": true
     },
     "sectionOrder": [
       "about",
       "education",
+      "skills",
       "interests",
       "connect"
     ]
