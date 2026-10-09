@@ -5,8 +5,8 @@ const fallback = {
     "goal": "Currently focused on internship opportunities in finance-tech and digital business.",
     "location": "Betul, Madhya Pradesh, India",
     "domain": "himanshuchandelkar.social",
-    "primaryCtaLabel": "View Projects",
-    "primaryCtaTarget": "#projects",
+    "primaryCtaLabel": "Connect",
+    "primaryCtaTarget": "#connect",
     "resumeUrl": "./resume.pdf"
   },
   "about": {
@@ -109,7 +109,7 @@ const fallback = {
       "projects": true,
       "connect": true
     },
-    "sectionOrder": ["about", "education", "skills", "interests", "projects", "connect"]
+    "sectionOrder": ["about", "education", "skills", "interests", "connect"]
   }
 };
 
