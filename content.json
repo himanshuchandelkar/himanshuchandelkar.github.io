@@ -43,15 +43,15 @@
   "skills": [
     {
       "category": "Finance",
-      "items": ["Financial Accounting", "Tax Basics", "Business Law", "Market Research"]
+      "items": ["Financial Accounting", "Business Law"]
     },
     {
       "category": "Tools",
-      "items": ["Excel", "Google Sheets", "Canva"]
+      "items": ["Google Sheets"]
     },
     {
       "category": "Tech Stack",
-      "items": ["HTML", "CSS", "JavaScript", "Git & GitHub"]
+      "items": ["Git & GitHub"]
     }
   ],
   "interests": [
