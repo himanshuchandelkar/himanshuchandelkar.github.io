@@ -40,11 +40,11 @@
 
   function renderHero(C){
     if(!C.settings?.show?.hero) return "";
-    const ctaLabel = C.site?.primaryCtaLabel || "Connect";
-    const ctaTarget = C.site?.primaryCtaTarget || "#connect";
+    const ctaLabel = C.site?.primaryCtaLabel || "View Projects";
+    const ctaTarget = C.site?.primaryCtaTarget || "#projects";
     const resumeUrl = C.site?.resumeUrl || "";
 
-    return `<section class="hero"><div class="hero-copy"><div class="status-badge"><span class="status-dot"></span> Open to Internships & Opportunities</div><p class="eyebrow">HELLO, I'M</p><h1>${esc(C.site?.name).replace(" ", "<br>")}</h1><p class="role">${esc(C.site?.title)}</p>${C.site?.goal ? `<p class="goal">${esc(C.site.goal)}</p>` : ""}<p class="location">📍 ${esc(C.site?.location)}</p><div class="actions"><a class="button primary" href="${esc(ctaTarget)}">${esc(ctaLabel)}</a>${resumeUrl ? `<a class="button secondary" href="${esc(resumeUrl)}"${linkAttrs(resumeUrl)}>Download Resume</a>` : ""}</div></div><div class="social-strip">${(C.socials || []).map(s => `<a href="${esc(s.url)}"${linkAttrs(s.url)}>${esc(s.name)}</a>`).join("")}</div></section>`;
+    return `<section class="hero"><div class="hero-copy"><p class="eyebrow">HELLO, I'M</p><h1>${esc(C.site?.name).replace(" ", "<br>")}</h1><p class="role">${esc(C.site?.title)}</p>${C.site?.goal ? `<p class="goal">${esc(C.site.goal)}</p>` : ""}<p class="location">📍 ${esc(C.site?.location)}</p><div class="actions"><a class="button primary" href="${esc(ctaTarget)}">${esc(ctaLabel)}</a>${resumeUrl ? `<a class="button secondary" href="${esc(resumeUrl)}"${linkAttrs(resumeUrl)}>Download Resume</a>` : ""}</div></div><div class="social-strip">${(C.socials || []).map(s => `<a href="${esc(s.url)}"${linkAttrs(s.url)}>${esc(s.name)}</a>`).join("")}</div></section>`;
   }
 
   function renderSections(C){
