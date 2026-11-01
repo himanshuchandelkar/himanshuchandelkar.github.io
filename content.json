@@ -11,10 +11,28 @@
   },
   "about": {
     "heading": "A little about me.",
+    "label": "01 — ABOUT ME",
     "paragraphs": [
-      "I am currently pursuing a Bachelor of Commerce (Computer Applications) with a strong interest in business, finance, and technology. My academic journey combines accounting, taxation, business law, e-commerce, and digital marketing while I continue to explore emerging technologies such as artificial intelligence and blockchain.",
-      "I enjoy learning how technology is transforming businesses and financial systems, and I am focused on continuously developing practical skills through academic coursework and self-learning.",
-      "I am always open to connecting with professionals and fellow learners who share an interest in business, finance, and technology."
+      "I am currently pursuing a Bachelor of Commerce (Computer Applications) at J.H. Govt. P.G. College, Betul. My coursework brings together commerce subjects such as accounting, taxation, and business law with computer applications, e-commerce, and digital marketing.",
+      "I am interested in how financial principles and digital technology work together. I enjoy exploring how software, spreadsheets, automation, and structured data can support business operations and better decision-making.",
+      "Alongside my degree, I am building practical skills through self-learning and hands-on projects. I am interested in opportunities to learn and contribute in finance-tech, digital commerce, and business operations."
+    ],
+    "highlights": [
+      {
+        "label": "Degree Program",
+        "value": "B.Com (Computer Applications)",
+        "sub": "Undergraduate Degree"
+      },
+      {
+        "label": "College",
+        "value": "J.H. Govt. P.G. College",
+        "sub": "Betul, Madhya Pradesh"
+      },
+      {
+        "label": "Career Focus",
+        "value": "Finance & Technology",
+        "sub": "Learning and exploring opportunities"
+      }
     ]
   },
   "education": [
@@ -23,49 +41,116 @@
       "title": "B.Com (Computer Applications)",
       "institution": "J.H. Govt. P.G. College, Betul",
       "period": "Jul 2025 — Present",
-      "detail": "Currently pursuing a Bachelor of Commerce (Computer Applications), developing knowledge in accounting, finance, business, technology, e-commerce, digital marketing, and taxation through academic coursework and practical learning."
+      "detail": "Pursuing a Bachelor of Commerce with Computer Applications, combining commerce foundations with computing, e-commerce, and digital business subjects.",
+      "courseHighlights": [
+        "Financial Accounting",
+        "Cost Accounting",
+        "Business Law",
+        "Business Mathematics",
+        "E-Accounting & GST",
+        "Computer Applications",
+        "E-Commerce & Digital Marketing"
+      ]
     },
     {
       "current": false,
       "title": "Higher Secondary (XII), Commerce",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
       "period": "Jun 2023 — Apr 2025",
-      "detail": "Developed a strong foundation in accounting, business studies, economics, and communication, providing the basis for higher studies in commerce and finance."
+      "detail": "Studied commerce with a foundation in accountancy, business studies, economics, and languages.",
+      "courseHighlights": [
+        "Accountancy",
+        "Business Studies",
+        "Economics",
+        "English",
+        "Hindi"
+      ]
     },
     {
       "current": false,
       "title": "Secondary School (X)",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
       "period": "Mar 2022 — May 2023",
-      "detail": "Completed secondary education with a strong academic foundation across mathematics, science, social studies, and languages, preparing for higher secondary studies in commerce."
+      "detail": "Completed secondary education with coursework across mathematics, science, social studies, and languages.",
+      "courseHighlights": [
+        "Mathematics",
+        "Science",
+        "Social Studies",
+        "Languages"
+      ]
     }
   ],
   "skills": [
     {
-      "category": "Finance",
-      "items": ["Financial Accounting", "Business Law"]
+      "category": "Finance & Commerce",
+      "subtitle": "Academic foundations and areas being developed through coursework and practice.",
+      "countLabel": "4 Areas",
+      "items": [
+        "Financial Accounting",
+        "Cost Accounting",
+        "Business Law",
+        "Taxation & GST"
+      ]
     },
     {
-      "category": "Tools",
-      "items": ["Google Sheets"]
+      "category": "Digital Tools",
+      "subtitle": "Tools used or explored for productivity, documentation, and visual communication.",
+      "countLabel": "4 Tools",
+      "items": [
+        "Excel",
+        "Google Sheets",
+        "Canva",
+        "Notion"
+      ]
     },
     {
-      "category": "Tech Stack",
-      "items": ["Git & GitHub"]
+      "category": "Web & Workflow",
+      "subtitle": "Foundational web technologies and version-control learning.",
+      "countLabel": "4 Areas",
+      "items": [
+        "HTML & CSS",
+        "JavaScript (Learning)",
+        "Git",
+        "GitHub"
+      ]
     }
   ],
   "interests": [
     {
+      "number": "01",
       "title": "Finance & Financial Markets",
-      "detail": "Interested in finance, financial markets, investments, and understanding how financial systems work."
+      "subtitle": "Markets, Analysis & Valuation",
+      "detail": "Interested in financial markets, investment concepts, financial statements, and understanding how businesses and markets make financial decisions.",
+      "keyPoints": [
+        "Financial Statements",
+        "Capital Markets",
+        "Investments",
+        "Valuation"
+      ]
     },
     {
+      "number": "02",
       "title": "Technology",
-      "detail": "Exploring technology and the ways digital tools are changing businesses and financial systems."
+      "subtitle": "Digital Business & Automation",
+      "detail": "Exploring how digital tools, software, spreadsheets, and automated workflows can improve business processes and support finance-related work.",
+      "keyPoints": [
+        "FinTech",
+        "Workflow Automation",
+        "Spreadsheets",
+        "Digital Business"
+      ]
     },
     {
+      "number": "03",
       "title": "Web3 & Blockchain",
-      "detail": "Interested in blockchain technology, decentralized applications, and the broader Web3 ecosystem."
+      "subtitle": "Decentralized Technology",
+      "detail": "Interested in blockchain technology, decentralized applications, and how distributed systems may shape digital assets and financial services.",
+      "keyPoints": [
+        "Blockchain",
+        "Smart Contracts",
+        "Decentralized Apps",
+        "Digital Assets"
+      ]
     }
   ],
   "socials": [
