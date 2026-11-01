@@ -5,7 +5,8 @@
     skills: "Skills",
     interests: "Interests",
     connect: "Connect",
-    projects: "Projects"
+    projects: "Projects",
+    certifications: "Certifications"
   };
 
   const SECTION_LABELS = {
@@ -13,10 +14,11 @@
     education: "ACADEMIC BACKGROUND",
     skills: "SKILLS",
     interests: "INTERESTS",
-    projects: "PROJECTS"
+    projects: "PROJECTS",
+    certifications: "CERTIFICATIONS"
   };
 
-  const LABELLED_SECTIONS = ["about", "education", "skills", "interests", "projects"];
+  const LABELLED_SECTIONS = ["about", "education", "skills", "certifications", "interests", "projects"];
 
   const esc = value => String(value ?? "").replace(/[&<>"']/g, m => ({
     "&": "&amp;",
@@ -63,6 +65,9 @@
       if(key === "skills"){
         const totalSkills = (C.skills || []).reduce((sum,g) => sum + (g.items || []).length,0);
         html += `<section id="skills" class="section"><div class="section-label">${labels.skills || "03"} — SKILLS</div><div class="section-content"><div class="section-header-row"><div><h2>Skills I’m building.</h2><p class="section-intro">My active skillset spanning commerce principles, digital business tools, and web fundamentals.</p></div><div class="verified-pill">${totalSkills} Core Skills</div></div><div class="skills-grid">${(C.skills || []).map(group => `<div class="skill-group"><div><div class="skill-group-head"><h3>${esc(group.category)}</h3><span class="count-tag">${esc(group.countLabel || ((group.items || []).length + " Skills"))}</span></div><p class="group-subtitle">${esc(group.subtitle || "")}</p><div class="skill-tags">${(group.items || []).map(skill => `<span class="skill-pill">${esc(skill)}</span>`).join("")}</div></div></div>`).join("")}</div></div></section>`;
+      }
+      if(key === "certifications"){
+        html += `<section id="certifications" class="section"><div class="section-label">${labels.certifications || "04"} — CERTIFICATIONS</div><div class="section-content"><h2>Certifications & learning.</h2><p class="section-intro">Courses and credentials completed through structured learning.</p><div class="certifications-grid">${(C.certifications || []).map(cert => `<article class="certification-card"><div class="certification-top"><span class="certification-issuer">${esc(cert.issuer)}</span><span class="certification-date">${esc(cert.issued)}</span></div><h3>${esc(cert.title)}</h3>${cert.credentialId ? `<p class="credential-id">Credential ID: ${esc(cert.credentialId)}</p>` : ""}${(cert.skills || []).length ? `<div class="certification-skills">${cert.skills.map(skill => `<span>${esc(skill)}</span>`).join("")}</div>` : ""}${cert.credentialUrl ? `<a class="certification-link" href="${esc(cert.credentialUrl)}"${linkAttrs(cert.credentialUrl)}>View credential ↗</a>` : ""}</article>`).join("")}</div></div></section>`;
       }
       if(key === "interests"){
         html += `<section id="interests" class="section"><div class="section-label">${labels.interests || "04"} — INTERESTS</div><div class="section-content"><h2>Areas I’m interested in.</h2><p class="section-intro">Key domains where I spend my time researching, reading, and exploring practical innovations.</p><div class="cards">${(C.interests || []).map((i,n) => `<article class="card"><div class="card-head"><span class="card-num">${esc(i.number || String(n+1).padStart(2,"0"))}</span>${i.subtitle ? `<span class="card-sub">${esc(i.subtitle)}</span>` : ""}</div><h3>${esc(i.title)}</h3><p>${esc(i.detail)}</p>${(i.keyPoints || []).length ? `<div class="interest-pills">${i.keyPoints.map(kp => `<span>${esc(kp)}</span>`).join("")}</div>` : ""}</article>`).join("")}</div></div></section>`;

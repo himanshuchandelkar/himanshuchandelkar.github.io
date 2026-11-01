@@ -181,6 +181,11 @@ const defaultC = {
       "name": "reddit",
       "handle": "u/himanshuchandelkar",
       "url": "https://www.reddit.com/user/himanshuchandelkar/"
+    },
+    {
+      "name": "Substack",
+      "handle": "@himanshuchandelkar",
+      "url": "https://substack.com/@himanshuchandelkar"
     }
   ],
   "settings": {
@@ -195,17 +200,67 @@ const defaultC = {
       "skills": true,
       "interests": true,
       "projects": false,
-      "connect": true
+      "connect": true,
+      "certifications": true
     },
     "sectionOrder": [
       "about",
       "education",
       "skills",
+      "certifications",
       "interests",
       "connect"
     ]
   },
-  "projects": []
+  "projects": [],
+  "certifications": [
+    {
+      "title": "Create Your First Gemini Enterprise Application",
+      "issuer": "Google",
+      "issued": "Oct 2026",
+      "credentialId": "83d593d5-68c5-41f3-9a84-8722153c9c06",
+      "credentialUrl": "",
+      "skills": [
+        "AI Agents",
+        "Google Gemini"
+      ]
+    },
+    {
+      "title": "Develop AI-Powered Prototypes in Google AI Studio",
+      "issuer": "Google",
+      "issued": "Oct 2026",
+      "credentialId": "35ab10c4-2b59-4690-a821-74c585e096ca",
+      "credentialUrl": "",
+      "skills": [
+        "Prompt Engineering",
+        "Generative AI"
+      ]
+    },
+    {
+      "title": "Introduction to Git",
+      "issuer": "DataCamp",
+      "issued": "Sep 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    },
+    {
+      "title": "Introduction to GitHub Concepts",
+      "issuer": "DataCamp",
+      "issued": "Oct 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    },
+    {
+      "title": "Intermediate Git",
+      "issuer": "DataCamp",
+      "issued": "Oct 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    }
+  ]
 };
 
 let C;
@@ -220,14 +275,18 @@ function normalizeContent(value) {
   merged.about = { ...deep(defaultC.about), ...(value?.about || {}) };
   merged.about.paragraphs = Array.isArray(value?.about?.paragraphs) ? value.about.paragraphs : deep(defaultC.about.paragraphs);
   merged.about.highlights = Array.isArray(value?.about?.highlights) ? value.about.highlights : deep(defaultC.about.highlights);
-  for (const key of ["education","skills","interests","projects","socials"]) {
+  for (const key of ["education","skills","certifications","interests","projects","socials"]) {
     merged[key] = Array.isArray(value?.[key]) ? value[key] : deep(defaultC[key] || []);
   }
   merged.settings = { ...deep(defaultC.settings), ...(value?.settings || {}) };
   merged.settings.show = { ...deep(defaultC.settings.show), ...(value?.settings?.show || {}) };
   merged.settings.sectionOrder = Array.isArray(value?.settings?.sectionOrder)
-    ? value.settings.sectionOrder.filter((key, i, arr) => ["about","education","skills","interests","projects","connect"].includes(key) && arr.indexOf(key) === i)
+    ? value.settings.sectionOrder.filter((key, i, arr) => ["about","education","skills","certifications","interests","projects","connect"].includes(key) && arr.indexOf(key) === i)
     : deep(defaultC.settings.sectionOrder);
+  if (merged.certifications.length && !merged.settings.sectionOrder.includes("certifications")) {
+    const interestsIndex = merged.settings.sectionOrder.indexOf("interests");
+    merged.settings.sectionOrder.splice(interestsIndex < 0 ? merged.settings.sectionOrder.length : interestsIndex, 0, "certifications");
+  }
   return merged;
 }
 
@@ -290,6 +349,7 @@ function sectionName(key) {
     about: "About",
     education: "Academic Background",
     skills: "Skills",
+    certifications: "Certifications",
     interests: "Interests",
     projects: "Projects",
     connect: "Connect"
@@ -315,6 +375,10 @@ function renderPanel(tab = document.querySelector(".tab.active")?.dataset.tab ||
     html = `<h1 class="panel-title">Skills</h1><p class="panel-sub">Group your finance, tools, and tech stack skills.</p>${(C.skills || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.category || "Skill Group"}</strong><button class="mini danger" data-del="skills.${index}">Delete</button></div><div class="field"><label>Category</label><input data-skill="${index}.category" value="${escapeAttr(entry.category)}"></div><div class="field"><label>Description</label><textarea data-skill="${index}.subtitle">${entry.subtitle || ""}</textarea></div><div class="field"><label>Count label</label><input data-skill="${index}.countLabel" value="${escapeAttr(entry.countLabel || "")}"></div><div class="field"><label>Items (comma separated)</label><input data-skill-items="${index}" value="${escapeAttr((entry.items || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addSkill">+ Add skill group</button>`;
   }
 
+  if (tab === "certifications") {
+    html = `<h1 class="panel-title">Certifications</h1><p class="panel-sub">Manage courses, certificates, credential IDs, links, and related skills.</p>${(C.certifications || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.title || "Certification"}</strong><span><button class="mini" data-cert-up="${index}" ${index===0?"disabled":""}>↑</button><button class="mini" data-cert-down="${index}" ${index===C.certifications.length-1?"disabled":""}>↓</button><button class="mini danger" data-del="certifications.${index}">Delete</button></span></div><div class="field"><label>Certificate title</label><input data-cert="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="row"><div class="field"><label>Issuer</label><input data-cert="${index}.issuer" value="${escapeAttr(entry.issuer)}"></div><div class="field"><label>Issued</label><input data-cert="${index}.issued" value="${escapeAttr(entry.issued)}" placeholder="e.g. Oct 2026"></div></div><div class="field"><label>Credential ID (optional)</label><input data-cert="${index}.credentialId" value="${escapeAttr(entry.credentialId || "")}"></div><div class="field"><label>Credential URL (optional)</label><input data-cert="${index}.credentialUrl" value="${escapeAttr(entry.credentialUrl || "")}" placeholder="https://"></div><div class="field"><label>Related skills (comma separated)</label><input data-cert-skills="${index}" value="${escapeAttr((entry.skills || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addCertification">+ Add certification</button>`;
+  }
+
   if (tab === "interests") {
     html = `<h1 class="panel-title">Interests</h1><p class="panel-sub">Your interest cards.</p>${(C.interests || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>Interest ${index + 1}</strong><button class="mini danger" data-del="interests.${index}">Delete</button></div><div class="field"><label>Title</label><input data-interest="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Subtitle</label><input data-interest="${index}.subtitle" value="${escapeAttr(entry.subtitle || "")}"></div><div class="field"><label>Description</label><textarea data-interest="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Topic tags (comma separated)</label><input data-interest-tags="${index}" value="${escapeAttr((entry.keyPoints || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addInterest">+ Add interest</button>`;
   }
@@ -328,7 +392,7 @@ function renderPanel(tab = document.querySelector(".tab.active")?.dataset.tab ||
   }
 
   if (tab === "design") {
-    const allSections = ["about","education","skills","interests","projects","connect"];
+    const allSections = ["about","education","skills","certifications","interests","projects","connect"];
     const available = allSections.filter(key => !C.settings.sectionOrder.includes(key));
     html = `<h1 class="panel-title">Design & Sections</h1><p class="panel-sub">Control visibility, add or remove page sections, and change their order.</p><div class="swatches">${inputField("Accent", ["settings", "accent"])}${inputField("Background", ["settings", "background"])}${inputField("Text", ["settings", "text"])}${inputField("Muted text", ["settings", "muted"])}</div><h3 style="margin:18px 0 10px">Visibility</h3><label class="check" style="margin:10px 0"><input type="checkbox" data-toggle="hero" ${C.settings.show.hero ? "checked" : ""}> Hero</label>${allSections.map(key => `<label class="check" style="margin:10px 0"><input type="checkbox" data-toggle="${key}" ${C.settings.show[key] ? "checked" : ""}> ${sectionName(key)}</label>`).join("")}<h3 style="margin:22px 0 10px">Add a section</h3><div class="row"><div class="field"><select id="addSectionSelect" class="editor-select">${available.map(key => `<option value="${key}">${sectionName(key)}</option>`).join("")}</select></div><div class="field"><button class="add" id="addSection" ${available.length ? "" : "disabled"}>+ Add section</button></div></div><h3 style="margin:22px 0 10px">Page section order</h3><div class="section-order">${C.settings.sectionOrder.map((key, index) => `<div class="order-row"><span>${sectionName(key)}</span><span><button class="mini" data-up="${index}" ${index===0?"disabled":""}>↑</button><button class="mini" data-down="${index}" ${index===C.settings.sectionOrder.length-1?"disabled":""}>↓</button><button class="mini danger" data-remove-section="${key}">Remove</button></span></div>`).join("")}</div><div class="notice">Removing a section hides it from the page order. Its saved content is kept and can be added again.</div>`;
   }
@@ -379,6 +443,20 @@ function bindExtra() {
     element.oninput = () => {
       const index = +element.dataset.skillItems;
       C.skills[index].items = element.value.split(",").map(item => item.trim()).filter(Boolean);
+      renderPreview();
+    };
+  });
+
+  panel.querySelectorAll("[data-cert]").forEach(element => {
+    element.oninput = () => {
+      const [index, key] = element.dataset.cert.split(".");
+      C.certifications[+index][key] = element.value;
+      renderPreview();
+    };
+  });
+  panel.querySelectorAll("[data-cert-skills]").forEach(element => {
+    element.oninput = () => {
+      C.certifications[+element.dataset.certSkills].skills = element.value.split(",").map(v => v.trim()).filter(Boolean);
       renderPreview();
     };
   });
@@ -440,6 +518,11 @@ function bindExtra() {
     save();
   });
 
+  document.getElementById("addCertification")?.addEventListener("click", () => {
+    C.certifications.push({ title: "New certification", issuer: "Issuer", issued: "", credentialId: "", credentialUrl: "", skills: [] });
+    save();
+  });
+
   document.getElementById("addInterest")?.addEventListener("click", () => {
     C.interests.push({ title: "New interest", detail: "Description" });
     save();
@@ -469,6 +552,25 @@ function bindExtra() {
       const key = button.dataset.removeSection;
       C.settings.sectionOrder = C.settings.sectionOrder.filter(item => item !== key);
       save();
+    };
+  });
+
+  panel.querySelectorAll("[data-cert-up]").forEach(button => {
+    button.onclick = () => {
+      const index = Number(button.dataset.certUp);
+      if (index > 0) {
+        [C.certifications[index - 1], C.certifications[index]] = [C.certifications[index], C.certifications[index - 1]];
+        save();
+      }
+    };
+  });
+  panel.querySelectorAll("[data-cert-down]").forEach(button => {
+    button.onclick = () => {
+      const index = Number(button.dataset.certDown);
+      if (index < C.certifications.length - 1) {
+        [C.certifications[index + 1], C.certifications[index]] = [C.certifications[index], C.certifications[index + 1]];
+        save();
+      }
     };
   });
 

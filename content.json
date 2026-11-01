@@ -175,6 +175,11 @@
       "name": "reddit",
       "handle": "u/himanshuchandelkar",
       "url": "https://www.reddit.com/user/himanshuchandelkar/"
+    },
+    {
+      "name": "Substack",
+      "handle": "@himanshuchandelkar",
+      "url": "https://substack.com/@himanshuchandelkar"
     }
   ],
   "settings": {
@@ -189,15 +194,65 @@
       "skills": true,
       "interests": true,
       "projects": false,
-      "connect": true
+      "connect": true,
+      "certifications": true
     },
     "sectionOrder": [
       "about",
       "education",
       "skills",
+      "certifications",
       "interests",
       "connect"
     ]
   },
-  "projects": []
+  "projects": [],
+  "certifications": [
+    {
+      "title": "Create Your First Gemini Enterprise Application",
+      "issuer": "Google",
+      "issued": "Oct 2026",
+      "credentialId": "83d593d5-68c5-41f3-9a84-8722153c9c06",
+      "credentialUrl": "",
+      "skills": [
+        "AI Agents",
+        "Google Gemini"
+      ]
+    },
+    {
+      "title": "Develop AI-Powered Prototypes in Google AI Studio",
+      "issuer": "Google",
+      "issued": "Oct 2026",
+      "credentialId": "35ab10c4-2b59-4690-a821-74c585e096ca",
+      "credentialUrl": "",
+      "skills": [
+        "Prompt Engineering",
+        "Generative AI"
+      ]
+    },
+    {
+      "title": "Introduction to Git",
+      "issuer": "DataCamp",
+      "issued": "Sep 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    },
+    {
+      "title": "Introduction to GitHub Concepts",
+      "issuer": "DataCamp",
+      "issued": "Oct 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    },
+    {
+      "title": "Intermediate Git",
+      "issuer": "DataCamp",
+      "issued": "Oct 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    }
+  ]
 }
