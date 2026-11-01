@@ -4,18 +4,21 @@
     education: "Education",
     skills: "Skills",
     interests: "Interests",
-    connect: "Connect"
+    connect: "Connect",
+    projects: "Projects",
+    certifications: "Certifications"
   };
 
   const SECTION_LABELS = {
     about: "ABOUT ME",
-    education: "EDUCATION",
+    education: "ACADEMIC BACKGROUND",
     skills: "SKILLS",
     interests: "INTERESTS",
-    projects: "PROJECTS"
+    projects: "PROJECTS",
+    certifications: "CERTIFICATIONS"
   };
 
-  const LABELLED_SECTIONS = ["about", "education", "skills", "interests", "projects"];
+  const LABELLED_SECTIONS = ["about", "education", "skills", "certifications", "interests", "projects"];
 
   const esc = value => String(value ?? "").replace(/[&<>"']/g, m => ({
     "&": "&amp;",
@@ -47,35 +50,71 @@
     return `<section class="hero"><div class="hero-copy"><p class="eyebrow">HELLO, I'M</p><h1>${esc(C.site?.name).replace(" ", "<br>")}</h1><p class="role">${esc(C.site?.title)}</p>${C.site?.goal ? `<p class="goal">${esc(C.site.goal)}</p>` : ""}<p class="location">📍 ${esc(C.site?.location)}</p><div class="actions"><a class="button primary" href="${esc(ctaTarget)}">${esc(ctaLabel)}</a>${resumeUrl ? `<a class="button secondary" href="${esc(resumeUrl)}"${linkAttrs(resumeUrl)}>Download Resume</a>` : ""}</div></div><div class="social-strip">${(C.socials || []).map(s => `<a href="${esc(s.url)}"${linkAttrs(s.url)}>${esc(s.name)}</a>`).join("")}</div></section>`;
   }
 
+  function getDisplaySkillGroups(C){
+    const groups = (Array.isArray(C.skills) ? C.skills : []).map(group => ({
+      ...group,
+      items: Array.isArray(group.items) ? [...group.items] : []
+    }));
+    const seen = new Set();
+    for(const group of groups){
+      for(const item of group.items){
+        const key = String(item).trim().toLocaleLowerCase();
+        if(key) seen.add(key);
+      }
+    }
+    const linkedSkills = [];
+    for(const cert of (Array.isArray(C.certifications) ? C.certifications : [])){
+      for(const item of (Array.isArray(cert.skills) ? cert.skills : [])){
+        const skill = String(item ?? '').trim();
+        const key = skill.toLocaleLowerCase();
+        if(skill && !seen.has(key)){
+          seen.add(key);
+          linkedSkills.push(skill);
+        }
+      }
+    }
+    if(linkedSkills.length){
+      groups.push({
+        category: 'Certification Skills',
+        subtitle: 'Skills associated with your completed courses and credentials.',
+        countLabel: `${linkedSkills.length} Linked Skills`,
+        items: linkedSkills,
+        linkedFromCertifications: true
+      });
+    }
+    return groups;
+  }
+
   function renderSections(C){
     const order = C.settings?.sectionOrder || [];
     const labels = sectionLabelMap(order);
     let html = "";
-
     for(const key of order){
       if(!C.settings?.show?.[key]) continue;
-
       if(key === "about"){
-        html += `<section id="about" class="section"><div class="section-label">${labels.about} — ${SECTION_LABELS.about}</div><div class="section-content about-copy"><h2>${esc(C.about?.heading)}</h2>${(C.about?.paragraphs || []).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>`;
+        html += `<section id="about" class="section"><div class="section-label">${labels.about || "01"} — ABOUT ME</div><div class="section-content about-copy"><h2>${esc(C.about?.heading || "A little about me.")}</h2>${(C.about?.paragraphs || []).map(p => `<p>${esc(p)}</p>`).join("")}${(C.about?.highlights || []).length ? `<div class="about-highlights-grid">${C.about.highlights.map(h => `<div class="highlight-card"><span class="highlight-label">${esc(h.label)}</span><strong>${esc(h.value)}</strong>${h.sub ? `<span class="highlight-sub">${esc(h.sub)}</span>` : ""}</div>`).join("")}</div>` : ""}</div></section>`;
       }
-
       if(key === "education"){
-        html += `<section id="education" class="section"><div class="section-label">${labels.education} — ${SECTION_LABELS.education}</div><div class="section-content"><div class="education-timeline">${(C.education || []).map(e => `<article class="education-item ${e.current ? "current" : ""}"><div class="education-marker"></div><div class="education-main">${e.current ? '<span class="tag">CURRENT</span>' : ""}<h3>${esc(e.title)}</h3><p class="institution">${esc(e.institution)}</p><p class="muted">${esc(e.period)}</p><p class="education-detail">${esc(e.detail)}</p></div></article>`).join("")}</div></div></section>`;
+        html += `<section id="education" class="section"><div class="section-label">${labels.education || "02"} — ACADEMIC BACKGROUND</div><div class="section-content"><h2>Academic background.</h2><div class="education-timeline">${(C.education || []).map(e => `<article class="education-item ${e.current ? "current" : ""}"><div class="education-marker"></div><div class="education-main"><div class="education-badge-row"><span class="badge ${e.current ? "badge-current" : "badge-done"}">${e.current ? "● CURRENT PROGRAM" : "COMPLETED"}</span><span class="education-period">${esc(e.period)}</span></div><h3>${esc(e.title)}</h3><p class="education-inst">${esc(e.institution)}</p><p class="education-detail">${esc(e.detail)}</p>${(e.courseHighlights || []).length ? `<div class="course-highlights-box"><span class="course-label">Key Coursework &amp; Foundations:</span><div class="course-pills">${e.courseHighlights.map(c => `<span>${esc(c)}</span>`).join("")}</div></div>` : ""}</div></article>`).join("")}</div></div></section>`;
       }
-
       if(key === "skills"){
-        html += `<section id="skills" class="section"><div class="section-label">${labels.skills} — ${SECTION_LABELS.skills}</div><div class="section-content"><h2>Skills I’m building.</h2><div class="skills-grid">${(C.skills || []).map(group => `<article class="skill-group"><h3>${esc(group.category)}</h3><div class="skill-tags">${(group.items || []).map(item => `<span>${esc(item)}</span>`).join("")}</div></article>`).join("")}</div></div></section>`;
+        const skillGroups = getDisplaySkillGroups(C);
+        const totalSkills = skillGroups.reduce((sum,g) => sum + (g.items || []).length,0);
+        html += `<section id="skills" class="section"><div class="section-label">${labels.skills || "03"} — SKILLS</div><div class="section-content"><div class="section-header-row"><div><h2>Skills I’m building.</h2><p class="section-intro">My active skillset spanning commerce principles, digital business tools, and web fundamentals.</p></div><div class="verified-pill">${totalSkills} Core Skills</div></div><div class="skills-grid">${skillGroups.map(group => { const items = group.items || []; const savedLabel = String(group.countLabel || ""); const countLabel = savedLabel ? (/^\s*\d+/.test(savedLabel) ? savedLabel.replace(/^\s*\d+/, String(items.length)) : `${items.length} ${savedLabel}`) : `${items.length} Skills`; return `<div class="skill-group"><div><div class="skill-group-head"><h3>${esc(group.category)}</h3><span class="count-tag">${esc(countLabel)}</span></div><p class="group-subtitle">${esc(group.subtitle || "")}</p><div class="skill-tags">${items.map(skill => `<span class="skill-pill">${esc(skill)}</span>`).join("")}</div></div></div>`; }).join("")}</div></div></section>`;
       }
-
+      if(key === "certifications"){
+        html += `<section id="certifications" class="section"><div class="section-label">${labels.certifications || "04"} — CERTIFICATIONS</div><div class="section-content"><h2>Certifications & learning.</h2><p class="section-intro">Courses and credentials completed through structured learning.</p><div class="certifications-grid">${(C.certifications || []).map(cert => `<article class="certification-card"><div class="certification-top"><span class="certification-issuer">${esc(cert.issuer)}</span><span class="certification-date">${esc(cert.issued)}</span></div><h3>${esc(cert.title)}</h3>${cert.credentialId ? `<p class="credential-id">Credential ID: ${esc(cert.credentialId)}</p>` : ""}${(cert.skills || []).length ? `<div class="certification-skills">${cert.skills.map(skill => `<span>${esc(skill)}</span>`).join("")}</div>` : ""}${cert.credentialUrl ? `<a class="certification-link" href="${esc(cert.credentialUrl)}"${linkAttrs(cert.credentialUrl)}>View credential ↗</a>` : ""}</article>`).join("")}</div></div></section>`;
+      }
       if(key === "interests"){
-        html += `<section id="interests" class="section"><div class="section-label">${labels.interests} — ${SECTION_LABELS.interests}</div><div class="section-content"><h2>Areas I’m interested in.</h2><div class="cards">${(C.interests || []).map((i, n) => `<article class="card"><span>${String(n + 1).padStart(2, "0")}</span><h3>${esc(i.title)}</h3><p>${esc(i.detail)}</p></article>`).join("")}</div></div></section>`;
+        html += `<section id="interests" class="section"><div class="section-label">${labels.interests || "04"} — INTERESTS</div><div class="section-content"><h2>Areas I’m interested in.</h2><p class="section-intro">Key domains where I spend my time researching, reading, and exploring practical innovations.</p><div class="cards">${(C.interests || []).map((i,n) => `<article class="card"><div class="card-head"><span class="card-num">${esc(i.number || String(n+1).padStart(2,"0"))}</span>${i.subtitle ? `<span class="card-sub">${esc(i.subtitle)}</span>` : ""}</div><h3>${esc(i.title)}</h3><p>${esc(i.detail)}</p>${(i.keyPoints || []).length ? `<div class="interest-pills">${i.keyPoints.map(kp => `<span>${esc(kp)}</span>`).join("")}</div>` : ""}</article>`).join("")}</div></div></section>`;
       }
-
+      if(key === "projects"){
+        html += `<section id="projects" class="section"><div class="section-label">${labels.projects || "05"} — PROJECTS</div><div class="section-content"><h2>Selected projects.</h2><p class="section-intro">Practical work, experiments, and things I’m building.</p><div class="project-list">${(C.projects || []).map(project => `<article class="project-card"><h3>${esc(project.title)}</h3><p class="project-summary">${esc(project.summary)}</p>${project.tools ? `<p class="project-meta"><strong>Tools:</strong> ${esc(project.tools)}</p>` : ""}${project.outcome ? `<p class="project-meta"><strong>Outcome:</strong> ${esc(project.outcome)}</p>` : ""}${project.url ? `<a class="project-link" href="${esc(project.url)}"${linkAttrs(project.url)}>View project ↗</a>` : ""}</article>`).join("")}</div></div></section>`;
+      }
       if(key === "connect"){
         html += `<section id="connect" class="contact"><p class="eyebrow">CONNECT</p><h2>Find me online.</h2><p class="contact-intro">You can find me across these platforms.</p><div class="connect-list">${(C.socials || []).map(s => `<a href="${esc(s.url)}"${linkAttrs(s.url)}><strong>${esc(s.name)}</strong><span>${esc(s.handle)} ↗</span></a>`).join("")}</div></section>`;
       }
     }
-
     return html;
   }
 

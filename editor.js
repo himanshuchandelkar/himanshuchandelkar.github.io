@@ -7,94 +7,148 @@ const deep = value => JSON.parse(JSON.stringify(value));
 const defaultC = {
   "site": {
     "name": "Himanshu Chandelkar",
-    "title": "Commerce student exploring finance and technology.",
+    "title": "B.Com (Computer Applications) Student at Jaywanti Haksar Post Graduation College, Betul",
     "goal": "Currently focused on internship opportunities in finance-tech and digital business.",
     "location": "Betul, Madhya Pradesh, India",
     "domain": "himanshuchandelkar.social",
-    "primaryCtaLabel": "View Projects",
-    "primaryCtaTarget": "#projects",
+    "primaryCtaLabel": "Connect",
+    "primaryCtaTarget": "#connect",
     "resumeUrl": "./resume.pdf"
   },
   "about": {
     "heading": "A little about me.",
     "paragraphs": [
-      "I am currently pursuing a Bachelor of Commerce (Computer Applications) with a strong interest in business, finance, and technology. My academic journey combines accounting, taxation, business law, e-commerce, and digital marketing while I continue to explore emerging technologies such as artificial intelligence and blockchain.",
-      "I enjoy learning how technology is transforming businesses and financial systems, and I am focused on continuously developing practical skills through academic coursework and self-learning.",
-      "I am always open to connecting with professionals and fellow learners who share an interest in business, finance, and technology."
+      "I am currently pursuing a Bachelor of Commerce (Computer Applications) at J.H. Govt. P.G. College, Betul. My academic journey combines core commerce disciplines—financial accounting, taxation, and business law—with practical computing tools that empower modern enterprises.",
+      "I am deeply drawn to the intersection where financial principles meet digital technology. Rather than treating finance and computing as isolated disciplines, I explore how software, automation, and structured data systems optimize business operations, increase financial transparency, and improve decision-making.",
+      "Beyond college coursework, I am a dedicated self-learner continuously building real-world competency across financial analysis, front-end web technologies, and collaborative workflows. I am actively seeking internship opportunities in finance-tech, digital commerce, and business operations."
+    ],
+    "highlights": [
+      {
+        "label": "Degree Program",
+        "value": "B.Com (Computer Applications)",
+        "sub": "Undergraduate Degree"
+      },
+      {
+        "label": "College",
+        "value": "Jaywanti Haksar Post Graduation College, Betul",
+        "sub": "Betul, Madhya Pradesh"
+      },
+      {
+        "label": "Availability",
+        "value": "Open for Internships",
+        "sub": "Finance-Tech & Digital Biz"
+      }
     ]
   },
   "education": [
     {
       "current": true,
       "title": "B.Com (Computer Applications)",
-      "institution": "J.H. Govt. P.G. College, Betul",
+      "institution": "Jaywanti Haksar Post Graduation College, Betul",
       "period": "Jul 2025 — Present",
-      "detail": "Currently pursuing a Bachelor of Commerce (Computer Applications), developing knowledge in accounting, finance, business, technology, e-commerce, digital marketing, and taxation through academic coursework and practical learning."
+      "detail": "Currently pursuing a Bachelor of Commerce with specialization in Computer Applications. Blending accounting principles, financial management, business regulation, and taxation with computing systems, e-commerce applications, and digital business operations.",
+      "courseHighlights": [
+        "Financial Accounting",
+        "Business Law & Regulatory Framework",
+        "Computer Applications in Business",
+        "Tax Basics & Statutory Concepts",
+        "E-Commerce & Digital Systems",
+        "Market Dynamics"
+      ]
     },
     {
       "current": false,
       "title": "Higher Secondary (XII), Commerce",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
       "period": "Jun 2023 — Apr 2025",
-      "detail": "Developed a strong foundation in accounting, business studies, economics, and communication, providing the basis for higher studies in commerce and finance."
+      "detail": "Built a solid academic foundation across double-entry bookkeeping, corporate accounting concepts, principles of management, macroeconomic dynamics, and professional communication.",
+      "courseHighlights": [
+        "Accountancy & Bookkeeping",
+        "Business Studies & Management",
+        "Micro & Macro Economics",
+        "English & Professional Communication"
+      ]
     },
     {
       "current": false,
       "title": "Secondary School (X)",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
       "period": "Mar 2022 — May 2023",
-      "detail": "Completed secondary education with a strong academic foundation across mathematics, science, social studies, and languages, preparing for higher secondary studies in commerce."
+      "detail": "Completed secondary education with strong fundamentals across quantitative mathematics, general sciences, social studies, and language arts, preparing for advanced commerce studies.",
+      "courseHighlights": [
+        "Quantitative Mathematics",
+        "General Science",
+        "Social Sciences",
+        "Language & Composition"
+      ]
     }
   ],
   "skills": [
     {
       "category": "Finance",
-      "items": ["Financial Accounting", "Tax Basics", "Business Law", "Market Research"]
+      "subtitle": "",
+      "countLabel": "4",
+      "items": [
+        "Financial Accounting",
+        "Tax Basics",
+        "Business Law",
+        "Market Research"
+      ]
     },
     {
       "category": "Tools",
-      "items": ["Excel", "Google Sheets", "Canva", "Notion"]
+      "subtitle": "",
+      "countLabel": "2",
+      "items": [
+        "Google Sheets",
+        "Canva"
+      ]
     },
     {
       "category": "Tech Stack",
-      "items": ["HTML", "CSS", "JavaScript", "Git & GitHub"]
+      "subtitle": "",
+      "countLabel": "2",
+      "items": [
+        "Git & GitHub"
+      ]
     }
   ],
   "interests": [
     {
+      "number": "01",
       "title": "Finance & Financial Markets",
-      "detail": "Interested in finance, financial markets, investments, and understanding how financial systems work."
+      "subtitle": "Capital Markets & Valuation",
+      "detail": "Deeply interested in capital markets, investment mechanisms, corporate valuation, and macroeconomic dynamics. Analyzing how financial statements, interest rates, and liquidity drive Indian and global markets.",
+      "keyPoints": [
+        "Capital Markets",
+        "Financial Statements",
+        "Corporate Valuation",
+        "Market Dynamics"
+      ]
     },
     {
+      "number": "02",
       "title": "Technology",
-      "detail": "Exploring technology and the ways digital tools are changing businesses and financial systems."
+      "subtitle": "Digital Business & Automation",
+      "detail": "Exploring how digital tools, software architectures, and automated workflows are transforming commerce. Passionate about identifying software solutions that eliminate operational friction in finance and enterprise.",
+      "keyPoints": [
+        "FinTech Systems",
+        "Workflow Automation",
+        "Spreadsheet Modeling",
+        "Digital Business"
+      ]
     },
     {
+      "number": "03",
       "title": "Web3 & Blockchain",
-      "detail": "Interested in blockchain technology, decentralized applications, and the broader Web3 ecosystem."
-    }
-  ],
-  "projects": [
-    {
-      "title": "Personal Portfolio Website",
-      "summary": "Built and deployed a responsive portfolio website to present education, skills, and profile links.",
-      "tools": "HTML, CSS, JavaScript, GitHub Pages",
-      "outcome": "Created a maintainable online profile with editable content and faster updates.",
-      "url": "https://github.com/himanshuchandelkar/himanshuchandelkar.github.io"
-    },
-    {
-      "title": "Commerce Notes Hub",
-      "summary": "Organized semester-wise commerce notes and references in a structured repository for quick revision.",
-      "tools": "Google Docs, Notion, GitHub",
-      "outcome": "Improved revision speed and made shared study resources easier to navigate.",
-      "url": ""
-    },
-    {
-      "title": "Market Observation Tracker",
-      "summary": "Tracked daily market observations and company updates to improve consistency in financial learning.",
-      "tools": "Google Sheets, Data Visualization",
-      "outcome": "Built a repeatable workflow for analyzing trends and summarizing insights.",
-      "url": ""
+      "subtitle": "Decentralized Infrastructure",
+      "detail": "Investigating distributed ledger protocols, cryptographic consensus, smart contract execution, and the architecture of open financial systems that enable borderless, trustless transactions.",
+      "keyPoints": [
+        "Blockchain Protocols",
+        "Smart Contracts",
+        "Decentralized Systems",
+        "Open Finance"
+      ]
     }
   ],
   "socials": [
@@ -122,6 +176,16 @@ const defaultC = {
       "name": "Email",
       "handle": "contacthimanshuyt@gmail.com",
       "url": "mailto:contacthimanshuyt@gmail.com"
+    },
+    {
+      "name": "reddit",
+      "handle": "u/himanshuchandelkar",
+      "url": "https://www.reddit.com/user/himanshuchandelkar/"
+    },
+    {
+      "name": "Substack",
+      "handle": "@himanshuchandelkar",
+      "url": "https://substack.com/@himanshuchandelkar"
     }
   ],
   "settings": {
@@ -135,11 +199,68 @@ const defaultC = {
       "education": true,
       "skills": true,
       "interests": true,
-      "projects": true,
-      "connect": true
+      "projects": false,
+      "connect": true,
+      "certifications": true
     },
-    "sectionOrder": ["about", "education", "skills", "interests", "projects", "connect"]
-  }
+    "sectionOrder": [
+      "about",
+      "education",
+      "skills",
+      "certifications",
+      "interests",
+      "connect"
+    ]
+  },
+  "projects": [],
+  "certifications": [
+    {
+      "title": "Create Your First Gemini Enterprise Application",
+      "issuer": "Google",
+      "issued": "Oct 2026",
+      "credentialId": "83d593d5-68c5-41f3-9a84-8722153c9c06",
+      "credentialUrl": "",
+      "skills": [
+        "AI Agents",
+        "Google Gemini"
+      ]
+    },
+    {
+      "title": "Develop AI-Powered Prototypes in Google AI Studio",
+      "issuer": "Google",
+      "issued": "Oct 2026",
+      "credentialId": "35ab10c4-2b59-4690-a821-74c585e096ca",
+      "credentialUrl": "",
+      "skills": [
+        "Prompt Engineering",
+        "Generative AI"
+      ]
+    },
+    {
+      "title": "Introduction to Git",
+      "issuer": "DataCamp",
+      "issued": "Sep 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    },
+    {
+      "title": "Introduction to GitHub Concepts",
+      "issuer": "DataCamp",
+      "issued": "Oct 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    },
+    {
+      "title": "Intermediate Git",
+      "issuer": "DataCamp",
+      "issued": "Oct 2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": []
+    }
+  ]
 };
 
 let C;
@@ -148,12 +269,33 @@ function escapeAttr(value) {
   return String(value ?? "").replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 }
 
+function normalizeContent(value) {
+  const merged = { ...deep(defaultC), ...(value || {}) };
+  merged.site = { ...deep(defaultC.site), ...(value?.site || {}) };
+  merged.about = { ...deep(defaultC.about), ...(value?.about || {}) };
+  merged.about.paragraphs = Array.isArray(value?.about?.paragraphs) ? value.about.paragraphs : deep(defaultC.about.paragraphs);
+  merged.about.highlights = Array.isArray(value?.about?.highlights) ? value.about.highlights : deep(defaultC.about.highlights);
+  for (const key of ["education","skills","certifications","interests","projects","socials"]) {
+    merged[key] = Array.isArray(value?.[key]) ? value[key] : deep(defaultC[key] || []);
+  }
+  merged.settings = { ...deep(defaultC.settings), ...(value?.settings || {}) };
+  merged.settings.show = { ...deep(defaultC.settings.show), ...(value?.settings?.show || {}) };
+  merged.settings.sectionOrder = Array.isArray(value?.settings?.sectionOrder)
+    ? value.settings.sectionOrder.filter((key, i, arr) => ["about","education","skills","certifications","interests","projects","connect"].includes(key) && arr.indexOf(key) === i)
+    : deep(defaultC.settings.sectionOrder);
+  if (merged.certifications.length && !merged.settings.sectionOrder.includes("certifications")) {
+    const interestsIndex = merged.settings.sectionOrder.indexOf("interests");
+    merged.settings.sectionOrder.splice(interestsIndex < 0 ? merged.settings.sectionOrder.length : interestsIndex, 0, "certifications");
+  }
+  return merged;
+}
+
 function loadC() {
   try {
     const value = localStorage.getItem(KEY);
-    C = value ? JSON.parse(value) : deep(defaultC);
+    C = normalizeContent(value ? JSON.parse(value) : defaultC);
   } catch (error) {
-    C = deep(defaultC);
+    C = normalizeContent(defaultC);
   }
 }
 
@@ -205,8 +347,9 @@ function textareaField(label, path) {
 function sectionName(key) {
   return ({
     about: "About",
-    education: "Education",
+    education: "Academic Background",
     skills: "Skills",
+    certifications: "Certifications",
     interests: "Interests",
     projects: "Projects",
     connect: "Connect"
@@ -221,31 +364,37 @@ function renderPanel(tab = document.querySelector(".tab.active")?.dataset.tab ||
   }
 
   if (tab === "about") {
-    html = `<h1 class="panel-title">About</h1><p class="panel-sub">Edit your introduction.</p>${inputField("Heading", ["about", "heading"])}${C.about.paragraphs.map((paragraph, index) => `<div class="item"><div class="item-head"><strong>Paragraph ${index + 1}</strong><button class="mini danger" data-del="about.${index}">Delete</button></div><textarea data-about-index="${index}">${paragraph}</textarea></div>`).join("")}<button class="add" id="addAbout">+ Add paragraph</button>`;
+    html = `<h1 class="panel-title">About</h1><p class="panel-sub">Edit your introduction.</p>${inputField("Heading", ["about", "heading"])}${C.about.paragraphs.map((paragraph, index) => `<div class="item"><div class="item-head"><strong>Paragraph ${index + 1}</strong><button class="mini danger" data-del="about.${index}">Delete</button></div><textarea data-about-index="${index}">${paragraph}</textarea></div>`).join("")}<button class="add" id="addAbout">+ Add paragraph</button><h3 style="margin:22px 0 10px">About highlights</h3>${(C.about.highlights || []).map((h,i) => `<div class="item"><div class="item-head"><strong>Highlight ${i + 1}</strong><button class="mini danger" data-del="about.highlights.${i}">Delete</button></div><div class="field"><label>Label</label><input data-about-highlight="${i}.label" value="${escapeAttr(h.label)}"></div><div class="field"><label>Value</label><input data-about-highlight="${i}.value" value="${escapeAttr(h.value)}"></div><div class="field"><label>Subtext</label><input data-about-highlight="${i}.sub" value="${escapeAttr(h.sub)}"></div></div>`).join("")}<button class="add" id="addHighlight">+ Add highlight</button>`;
   }
 
   if (tab === "education") {
-    html = `<h1 class="panel-title">Education</h1><p class="panel-sub">Add, remove or edit education entries.</p>${C.education.map((entry, index) => `<div class="item"><div class="item-head"><strong>${index + 1}. ${entry.title || "Education"}</strong><button class="mini danger" data-del="education.${index}">Delete</button></div><div class="field"><label>Title</label><input data-edu="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Institution</label><input data-edu="${index}.institution" value="${escapeAttr(entry.institution)}"></div><div class="row"><div class="field"><label>Period</label><input data-edu="${index}.period" value="${escapeAttr(entry.period)}"></div><div class="field"><label>Current?</label><label class="check"><input type="checkbox" data-edu-check="${index}" ${entry.current ? "checked" : ""}> Show CURRENT tag</label></div></div><div class="field"><label>Description</label><textarea data-edu="${index}.detail">${entry.detail}</textarea></div></div>`).join("")}<button class="add" id="addEdu">+ Add education</button>`;
+    html = `<h1 class="panel-title">Academic Background</h1><p class="panel-sub">Add, remove or edit education entries.</p>${(C.education || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${index + 1}. ${entry.title || "Education"}</strong><button class="mini danger" data-del="education.${index}">Delete</button></div><div class="field"><label>Title</label><input data-edu="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Institution</label><input data-edu="${index}.institution" value="${escapeAttr(entry.institution)}"></div><div class="row"><div class="field"><label>Period</label><input data-edu="${index}.period" value="${escapeAttr(entry.period)}"></div><div class="field"><label>Current?</label><label class="check"><input type="checkbox" data-edu-check="${index}" ${entry.current ? "checked" : ""}> Show CURRENT tag</label></div></div><div class="field"><label>Description</label><textarea data-edu="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Coursework (comma separated)</label><input data-edu-courses="${index}" value="${escapeAttr((entry.courseHighlights || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addEdu">+ Add education</button>`;
   }
 
   if (tab === "skills") {
-    html = `<h1 class="panel-title">Skills</h1><p class="panel-sub">Group your finance, tools, and tech stack skills.</p>${C.skills.map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.category || "Skill Group"}</strong><button class="mini danger" data-del="skills.${index}">Delete</button></div><div class="field"><label>Category</label><input data-skill="${index}.category" value="${escapeAttr(entry.category)}"></div><div class="field"><label>Items (comma separated)</label><input data-skill-items="${index}" value="${escapeAttr((entry.items || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addSkill">+ Add skill group</button>`;
+    html = `<h1 class="panel-title">Skills</h1><p class="panel-sub">Group your finance, tools, and tech stack skills. Skills entered under Certifications are automatically included in a separate Certification Skills group on your website.</p>${(C.skills || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.category || "Skill Group"}</strong><button class="mini danger" data-del="skills.${index}">Delete</button></div><div class="field"><label>Category</label><input data-skill="${index}.category" value="${escapeAttr(entry.category)}"></div><div class="field"><label>Description</label><textarea data-skill="${index}.subtitle">${entry.subtitle || ""}</textarea></div><div class="field"><label>Count label</label><input data-skill="${index}.countLabel" value="${escapeAttr(entry.countLabel || "")}"></div><div class="field"><label>Items (comma separated)</label><input data-skill-items="${index}" value="${escapeAttr((entry.items || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addSkill">+ Add skill group</button>`;
+  }
+
+  if (tab === "certifications") {
+    html = `<h1 class="panel-title">Certifications</h1><p class="panel-sub">Manage courses, certificates, credential IDs, links, and related skills. Related skills automatically sync into the main Skills section; duplicates are shown only once.</p>${(C.certifications || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.title || "Certification"}</strong><span><button class="mini" data-cert-up="${index}" ${index===0?"disabled":""}>↑</button><button class="mini" data-cert-down="${index}" ${index===C.certifications.length-1?"disabled":""}>↓</button><button class="mini danger" data-del="certifications.${index}">Delete</button></span></div><div class="field"><label>Certificate title</label><input data-cert="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="row"><div class="field"><label>Issuer</label><input data-cert="${index}.issuer" value="${escapeAttr(entry.issuer)}"></div><div class="field"><label>Issued</label><input data-cert="${index}.issued" value="${escapeAttr(entry.issued)}" placeholder="e.g. Oct 2026"></div></div><div class="field"><label>Credential ID (optional)</label><input data-cert="${index}.credentialId" value="${escapeAttr(entry.credentialId || "")}"></div><div class="field"><label>Credential URL (optional)</label><input data-cert="${index}.credentialUrl" value="${escapeAttr(entry.credentialUrl || "")}" placeholder="https://"></div><div class="field"><label>Related skills (comma separated)</label><input data-cert-skills="${index}" value="${escapeAttr((entry.skills || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addCertification">+ Add certification</button>`;
   }
 
   if (tab === "interests") {
-    html = `<h1 class="panel-title">Interests</h1><p class="panel-sub">Your interest cards.</p>${C.interests.map((entry, index) => `<div class="item"><div class="item-head"><strong>Interest ${index + 1}</strong><button class="mini danger" data-del="interests.${index}">Delete</button></div><div class="field"><label>Title</label><input data-interest="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Description</label><textarea data-interest="${index}.detail">${entry.detail}</textarea></div></div>`).join("")}<button class="add" id="addInterest">+ Add interest</button>`;
+    html = `<h1 class="panel-title">Interests</h1><p class="panel-sub">Your interest cards.</p>${(C.interests || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>Interest ${index + 1}</strong><button class="mini danger" data-del="interests.${index}">Delete</button></div><div class="field"><label>Title</label><input data-interest="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Subtitle</label><input data-interest="${index}.subtitle" value="${escapeAttr(entry.subtitle || "")}"></div><div class="field"><label>Description</label><textarea data-interest="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Topic tags (comma separated)</label><input data-interest-tags="${index}" value="${escapeAttr((entry.keyPoints || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addInterest">+ Add interest</button>`;
   }
 
   if (tab === "projects") {
-    html = `<h1 class="panel-title">Projects</h1><p class="panel-sub">Add work examples with tools and outcomes.</p>${C.projects.map((project, index) => `<div class="item"><div class="item-head"><strong>${project.title || "Project"}</strong><button class="mini danger" data-del="projects.${index}">Delete</button></div><div class="field"><label>Title</label><input data-project="${index}.title" value="${escapeAttr(project.title)}"></div><div class="field"><label>Summary</label><textarea data-project="${index}.summary">${project.summary}</textarea></div><div class="field"><label>Tools</label><input data-project="${index}.tools" value="${escapeAttr(project.tools)}"></div><div class="field"><label>Outcome</label><textarea data-project="${index}.outcome">${project.outcome}</textarea></div><div class="field"><label>Project URL (optional)</label><input data-project="${index}.url" value="${escapeAttr(project.url)}"></div></div>`).join("")}<button class="add" id="addProject">+ Add project</button>`;
+    html = `<h1 class="panel-title">Projects</h1><p class="panel-sub">Add work examples with tools and outcomes.</p>${(C.projects || []).map((project, index) => `<div class="item"><div class="item-head"><strong>${project.title || "Project"}</strong><button class="mini danger" data-del="projects.${index}">Delete</button></div><div class="field"><label>Title</label><input data-project="${index}.title" value="${escapeAttr(project.title)}"></div><div class="field"><label>Summary</label><textarea data-project="${index}.summary">${project.summary}</textarea></div><div class="field"><label>Tools</label><input data-project="${index}.tools" value="${escapeAttr(project.tools)}"></div><div class="field"><label>Outcome</label><textarea data-project="${index}.outcome">${project.outcome}</textarea></div><div class="field"><label>Project URL (optional)</label><input data-project="${index}.url" value="${escapeAttr(project.url)}"></div></div>`).join("")}<button class="add" id="addProject">+ Add project</button>`;
   }
 
   if (tab === "socials") {
-    html = `<h1 class="panel-title">Socials</h1><p class="panel-sub">Edit links shown on your site.</p>${C.socials.map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.name || "Social"}</strong><button class="mini danger" data-del="socials.${index}">Delete</button></div><div class="row"><div class="field"><label>Name</label><input data-social="${index}.name" value="${escapeAttr(entry.name)}"></div><div class="field"><label>Handle / display text</label><input data-social="${index}.handle" value="${escapeAttr(entry.handle)}"></div></div><div class="field"><label>URL</label><input data-social="${index}.url" value="${escapeAttr(entry.url)}"></div></div>`).join("")}<button class="add" id="addSocial">+ Add social link</button>`;
+    html = `<h1 class="panel-title">Socials</h1><p class="panel-sub">Edit links shown on your site.</p>${(C.socials || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.name || "Social"}</strong><span><button class="mini" data-social-up="${index}" ${index===0?"disabled":""}>↑</button><button class="mini" data-social-down="${index}" ${index===C.socials.length-1?"disabled":""}>↓</button><button class="mini danger" data-del="socials.${index}">Delete</button></span></div><div class="row"><div class="field"><label>Name</label><input data-social="${index}.name" value="${escapeAttr(entry.name)}"></div><div class="field"><label>Handle / display text</label><input data-social="${index}.handle" value="${escapeAttr(entry.handle)}"></div></div><div class="field"><label>URL</label><input data-social="${index}.url" value="${escapeAttr(entry.url)}"></div></div>`).join("")}<button class="add" id="addSocial">+ Add social link</button>`;
   }
 
   if (tab === "design") {
-    html = `<h1 class="panel-title">Design & Sections</h1><p class="panel-sub">Control colors, visibility, and section order.</p><div class="swatches">${inputField("Accent", ["settings", "accent"])}${inputField("Background", ["settings", "background"])}${inputField("Text", ["settings", "text"])}${inputField("Muted text", ["settings", "muted"])}</div><h3 style="margin:18px 0 10px">Show / hide</h3>${["hero", "about", "education", "skills", "interests", "projects", "connect"].map(key => `<label class="check" style="margin:10px 0"><input type="checkbox" data-toggle="${key}" ${C.settings.show[key] ? "checked" : ""}> ${key[0].toUpperCase() + key.slice(1)}</label>`).join("")}<h3 style="margin:22px 0 10px">Section order</h3><div class="section-order">${C.settings.sectionOrder.map((key, index) => `<div class="order-row"><span>${sectionName(key)}</span><span><button class="mini" data-up="${index}">↑</button><button class="mini" data-down="${index}">↓</button></span></div>`).join("")}</div>`;
+    const allSections = ["about","education","skills","certifications","interests","projects","connect"];
+    const available = allSections.filter(key => !C.settings.sectionOrder.includes(key));
+    html = `<h1 class="panel-title">Design & Sections</h1><p class="panel-sub">Control visibility, add or remove page sections, and change their order.</p><div class="swatches">${inputField("Accent", ["settings", "accent"])}${inputField("Background", ["settings", "background"])}${inputField("Text", ["settings", "text"])}${inputField("Muted text", ["settings", "muted"])}</div><h3 style="margin:18px 0 10px">Visibility</h3><label class="check" style="margin:10px 0"><input type="checkbox" data-toggle="hero" ${C.settings.show.hero ? "checked" : ""}> Hero</label>${allSections.map(key => `<label class="check" style="margin:10px 0"><input type="checkbox" data-toggle="${key}" ${C.settings.show[key] ? "checked" : ""}> ${sectionName(key)}</label>`).join("")}<h3 style="margin:22px 0 10px">Add a section</h3><div class="row"><div class="field"><select id="addSectionSelect" class="editor-select">${available.map(key => `<option value="${key}">${sectionName(key)}</option>`).join("")}</select></div><div class="field"><button class="add" id="addSection" ${available.length ? "" : "disabled"}>+ Add section</button></div></div><h3 style="margin:22px 0 10px">Page section order</h3><div class="section-order">${C.settings.sectionOrder.map((key, index) => `<div class="order-row"><span>${sectionName(key)}</span><span><button class="mini" data-up="${index}" ${index===0?"disabled":""}>↑</button><button class="mini" data-down="${index}" ${index===C.settings.sectionOrder.length-1?"disabled":""}>↓</button><button class="mini danger" data-remove-section="${key}">Remove</button></span></div>`).join("")}</div><div class="notice">Removing a section hides it from the page order. Its saved content is kept and can be added again.</div>`;
   }
 
   panel.innerHTML = html;
@@ -269,6 +418,12 @@ function bindExtra() {
     };
   });
 
+  panel.querySelectorAll("[data-about-highlight]").forEach(element => {
+    element.oninput = () => { const [index,key] = element.dataset.aboutHighlight.split("."); C.about.highlights[+index][key] = element.value; renderPreview(); };
+  });
+  panel.querySelectorAll("[data-edu-courses]").forEach(element => {
+    element.oninput = () => { C.education[+element.dataset.eduCourses].courseHighlights = element.value.split(",").map(v=>v.trim()).filter(Boolean); renderPreview(); };
+  });
   panel.querySelectorAll("[data-edu-check]").forEach(element => {
     element.onchange = () => {
       C.education[+element.dataset.eduCheck].current = element.checked;
@@ -292,6 +447,23 @@ function bindExtra() {
     };
   });
 
+  panel.querySelectorAll("[data-cert]").forEach(element => {
+    element.oninput = () => {
+      const [index, key] = element.dataset.cert.split(".");
+      C.certifications[+index][key] = element.value;
+      renderPreview();
+    };
+  });
+  panel.querySelectorAll("[data-cert-skills]").forEach(element => {
+    element.oninput = () => {
+      C.certifications[+element.dataset.certSkills].skills = element.value.split(",").map(v => v.trim()).filter(Boolean);
+      renderPreview();
+    };
+  });
+
+  panel.querySelectorAll("[data-interest-tags]").forEach(element => {
+    element.oninput = () => { C.interests[+element.dataset.interestTags].keyPoints = element.value.split(",").map(v=>v.trim()).filter(Boolean); renderPreview(); };
+  });
   panel.querySelectorAll("[data-interest]").forEach(element => {
     element.oninput = () => {
       const [index, key] = element.dataset.interest.split(".");
@@ -318,14 +490,21 @@ function bindExtra() {
 
   panel.querySelectorAll("[data-del]").forEach(button => {
     button.onclick = () => {
-      const [arrayName, index] = button.dataset.del.split(".");
-      C[arrayName].splice(+index, 1);
+      const parts = button.dataset.del.split(".");
+      if (parts.length === 3) C[parts[0]][parts[1]].splice(+parts[2], 1);
+      else C[parts[0]].splice(+parts[1], 1);
       save();
     };
   });
 
   document.getElementById("addAbout")?.addEventListener("click", () => {
     C.about.paragraphs.push("New paragraph");
+    save();
+  });
+
+  document.getElementById("addHighlight")?.addEventListener("click", () => {
+    C.about.highlights = C.about.highlights || [];
+    C.about.highlights.push({ label: "New label", value: "New value", sub: "" });
     save();
   });
 
@@ -336,6 +515,11 @@ function bindExtra() {
 
   document.getElementById("addSkill")?.addEventListener("click", () => {
     C.skills.push({ category: "New category", items: ["Skill"] });
+    save();
+  });
+
+  document.getElementById("addCertification")?.addEventListener("click", () => {
+    C.certifications.push({ title: "New certification", issuer: "Issuer", issued: "", credentialId: "", credentialUrl: "", skills: [] });
     save();
   });
 
@@ -352,6 +536,61 @@ function bindExtra() {
   document.getElementById("addSocial")?.addEventListener("click", () => {
     C.socials.push({ name: "New link", handle: "@username", url: "https://" });
     save();
+  });
+
+  document.getElementById("addSection")?.addEventListener("click", () => {
+    const key = document.getElementById("addSectionSelect")?.value;
+    if (key && !C.settings.sectionOrder.includes(key)) {
+      C.settings.sectionOrder.push(key);
+      C.settings.show[key] = true;
+      save();
+    }
+  });
+
+  panel.querySelectorAll("[data-remove-section]").forEach(button => {
+    button.onclick = () => {
+      const key = button.dataset.removeSection;
+      C.settings.sectionOrder = C.settings.sectionOrder.filter(item => item !== key);
+      save();
+    };
+  });
+
+  panel.querySelectorAll("[data-cert-up]").forEach(button => {
+    button.onclick = () => {
+      const index = Number(button.dataset.certUp);
+      if (index > 0) {
+        [C.certifications[index - 1], C.certifications[index]] = [C.certifications[index], C.certifications[index - 1]];
+        save();
+      }
+    };
+  });
+  panel.querySelectorAll("[data-cert-down]").forEach(button => {
+    button.onclick = () => {
+      const index = Number(button.dataset.certDown);
+      if (index < C.certifications.length - 1) {
+        [C.certifications[index + 1], C.certifications[index]] = [C.certifications[index], C.certifications[index + 1]];
+        save();
+      }
+    };
+  });
+
+  panel.querySelectorAll("[data-social-up]").forEach(button => {
+    button.onclick = () => {
+      const index = Number(button.dataset.socialUp);
+      if (index > 0) {
+        [C.socials[index - 1], C.socials[index]] = [C.socials[index], C.socials[index - 1]];
+        save();
+      }
+    };
+  });
+  panel.querySelectorAll("[data-social-down]").forEach(button => {
+    button.onclick = () => {
+      const index = Number(button.dataset.socialDown);
+      if (index < C.socials.length - 1) {
+        [C.socials[index + 1], C.socials[index]] = [C.socials[index], C.socials[index + 1]];
+        save();
+      }
+    };
   });
 
   panel.querySelectorAll("[data-up]").forEach(button => {
