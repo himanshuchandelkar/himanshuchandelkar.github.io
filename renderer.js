@@ -4,7 +4,8 @@
     education: "Education",
     skills: "Skills",
     interests: "Interests",
-    connect: "Connect"
+    connect: "Connect",
+    projects: "Projects"
   };
 
   const SECTION_LABELS = {
@@ -65,6 +66,9 @@
       }
       if(key === "interests"){
         html += `<section id="interests" class="section"><div class="section-label">${labels.interests || "04"} — INTERESTS</div><div class="section-content"><h2>Areas I’m interested in.</h2><p class="section-intro">Key domains where I spend my time researching, reading, and exploring practical innovations.</p><div class="cards">${(C.interests || []).map((i,n) => `<article class="card"><div class="card-head"><span class="card-num">${esc(i.number || String(n+1).padStart(2,"0"))}</span>${i.subtitle ? `<span class="card-sub">${esc(i.subtitle)}</span>` : ""}</div><h3>${esc(i.title)}</h3><p>${esc(i.detail)}</p>${(i.keyPoints || []).length ? `<div class="interest-pills">${i.keyPoints.map(kp => `<span>${esc(kp)}</span>`).join("")}</div>` : ""}</article>`).join("")}</div></div></section>`;
+      }
+      if(key === "projects"){
+        html += `<section id="projects" class="section"><div class="section-label">${labels.projects || "05"} — PROJECTS</div><div class="section-content"><h2>Selected projects.</h2><p class="section-intro">Practical work, experiments, and things I’m building.</p><div class="project-list">${(C.projects || []).map(project => `<article class="project-card"><h3>${esc(project.title)}</h3><p class="project-summary">${esc(project.summary)}</p>${project.tools ? `<p class="project-meta"><strong>Tools:</strong> ${esc(project.tools)}</p>` : ""}${project.outcome ? `<p class="project-meta"><strong>Outcome:</strong> ${esc(project.outcome)}</p>` : ""}${project.url ? `<a class="project-link" href="${esc(project.url)}"${linkAttrs(project.url)}>View project ↗</a>` : ""}</article>`).join("")}</div></div></section>`;
       }
       if(key === "connect"){
         html += `<section id="connect" class="contact"><p class="eyebrow">CONNECT</p><h2>Find me online.</h2><p class="contact-intro">You can find me across these platforms.</p><div class="connect-list">${(C.socials || []).map(s => `<a href="${esc(s.url)}"${linkAttrs(s.url)}><strong>${esc(s.name)}</strong><span>${esc(s.handle)} ↗</span></a>`).join("")}</div></section>`;

@@ -24,7 +24,7 @@
       },
       {
         "label": "College",
-        "value": "J.H. Govt. P.G. College",
+        "value": "Jaywanti Haksar Post Graduation College, Betul",
         "sub": "Betul, Madhya Pradesh"
       },
       {
@@ -38,7 +38,7 @@
     {
       "current": true,
       "title": "B.Com (Computer Applications)",
-      "institution": "J.H. Govt. P.G. College, Betul",
+      "institution": "Jaywanti Haksar Post Graduation College, Betul",
       "period": "Jul 2025 — Present",
       "detail": "Currently pursuing a Bachelor of Commerce with specialization in Computer Applications. Blending accounting principles, financial management, business regulation, and taxation with computing systems, e-commerce applications, and digital business operations.",
       "courseHighlights": [
@@ -80,8 +80,8 @@
   "skills": [
     {
       "category": "Finance",
-      "subtitle": "Ledger systems, statutory concepts, regulatory compliance, and market evaluation.",
-      "countLabel": "4 Core Skills",
+      "subtitle": "",
+      "countLabel": "4",
       "items": [
         "Financial Accounting",
         "Tax Basics",
@@ -91,23 +91,18 @@
     },
     {
       "category": "Tools",
-      "subtitle": "Spreadsheet modeling, collaborative workspaces, visual communication, and documentation.",
-      "countLabel": "4 Essential Tools",
+      "subtitle": "",
+      "countLabel": "2",
       "items": [
-        "Excel",
         "Google Sheets",
-        "Canva",
-        "Notion"
+        "Canva"
       ]
     },
     {
       "category": "Tech Stack",
-      "subtitle": "Semantic web markup, responsive design styling, client scripting, and version control.",
-      "countLabel": "4 Core Technologies",
+      "subtitle": "",
+      "countLabel": "2",
       "items": [
-        "HTML",
-        "CSS",
-        "JavaScript",
         "Git & GitHub"
       ]
     }
@@ -175,6 +170,11 @@
       "name": "Email",
       "handle": "contacthimanshuyt@gmail.com",
       "url": "mailto:contacthimanshuyt@gmail.com"
+    },
+    {
+      "name": "reddit",
+      "handle": "u/himanshuchandelkar",
+      "url": "https://www.reddit.com/user/himanshuchandelkar/"
     }
   ],
   "settings": {
@@ -188,7 +188,7 @@
       "education": true,
       "skills": true,
       "interests": true,
-      "projects": true,
+      "projects": false,
       "connect": true
     },
     "sectionOrder": [
@@ -198,5 +198,6 @@
       "interests",
       "connect"
     ]
-  }
+  },
+  "projects": []
 }

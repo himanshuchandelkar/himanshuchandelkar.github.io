@@ -722,3 +722,13 @@ footer{
 .education-period{font-size:12px;color:var(--muted);font-family:monospace}
 .education-inst{color:var(--text);font-size:15px;font-weight:500}
 @media(max-width:860px){.skills-grid,.cards,.about-highlights-grid{grid-template-columns:1fr}}
+
+/* Editor integration refinements */
+#interests .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#interests .card{padding:32px;min-height:330px;gap:0}
+#interests .card h3{line-height:1.25;margin:22px 0 14px}
+#interests .card p{line-height:1.8;max-width:60ch}
+#interests .interest-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:24px}
+#interests .interest-pills span{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);color:var(--muted);font-size:11px}
+#projects .section-intro{color:var(--muted);margin:-12px 0 28px}
+@media(max-width:820px){#interests .cards{grid-template-columns:1fr}#interests .card{min-height:0}}

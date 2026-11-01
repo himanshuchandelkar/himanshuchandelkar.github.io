@@ -30,7 +30,7 @@ const defaultC = {
       },
       {
         "label": "College",
-        "value": "J.H. Govt. P.G. College",
+        "value": "Jaywanti Haksar Post Graduation College, Betul",
         "sub": "Betul, Madhya Pradesh"
       },
       {
@@ -44,7 +44,7 @@ const defaultC = {
     {
       "current": true,
       "title": "B.Com (Computer Applications)",
-      "institution": "J.H. Govt. P.G. College, Betul",
+      "institution": "Jaywanti Haksar Post Graduation College, Betul",
       "period": "Jul 2025 — Present",
       "detail": "Currently pursuing a Bachelor of Commerce with specialization in Computer Applications. Blending accounting principles, financial management, business regulation, and taxation with computing systems, e-commerce applications, and digital business operations.",
       "courseHighlights": [
@@ -86,8 +86,8 @@ const defaultC = {
   "skills": [
     {
       "category": "Finance",
-      "subtitle": "Ledger systems, statutory concepts, regulatory compliance, and market evaluation.",
-      "countLabel": "4 Core Skills",
+      "subtitle": "",
+      "countLabel": "4",
       "items": [
         "Financial Accounting",
         "Tax Basics",
@@ -97,23 +97,18 @@ const defaultC = {
     },
     {
       "category": "Tools",
-      "subtitle": "Spreadsheet modeling, collaborative workspaces, visual communication, and documentation.",
-      "countLabel": "4 Essential Tools",
+      "subtitle": "",
+      "countLabel": "2",
       "items": [
-        "Excel",
         "Google Sheets",
-        "Canva",
-        "Notion"
+        "Canva"
       ]
     },
     {
       "category": "Tech Stack",
-      "subtitle": "Semantic web markup, responsive design styling, client scripting, and version control.",
-      "countLabel": "4 Core Technologies",
+      "subtitle": "",
+      "countLabel": "2",
       "items": [
-        "HTML",
-        "CSS",
-        "JavaScript",
         "Git & GitHub"
       ]
     }
@@ -181,6 +176,11 @@ const defaultC = {
       "name": "Email",
       "handle": "contacthimanshuyt@gmail.com",
       "url": "mailto:contacthimanshuyt@gmail.com"
+    },
+    {
+      "name": "reddit",
+      "handle": "u/himanshuchandelkar",
+      "url": "https://www.reddit.com/user/himanshuchandelkar/"
     }
   ],
   "settings": {
@@ -194,7 +194,7 @@ const defaultC = {
       "education": true,
       "skills": true,
       "interests": true,
-      "projects": true,
+      "projects": false,
       "connect": true
     },
     "sectionOrder": [
@@ -204,7 +204,8 @@ const defaultC = {
       "interests",
       "connect"
     ]
-  }
+  },
+  "projects": []
 };
 
 let C;
@@ -213,12 +214,29 @@ function escapeAttr(value) {
   return String(value ?? "").replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 }
 
+function normalizeContent(value) {
+  const merged = { ...deep(defaultC), ...(value || {}) };
+  merged.site = { ...deep(defaultC.site), ...(value?.site || {}) };
+  merged.about = { ...deep(defaultC.about), ...(value?.about || {}) };
+  merged.about.paragraphs = Array.isArray(value?.about?.paragraphs) ? value.about.paragraphs : deep(defaultC.about.paragraphs);
+  merged.about.highlights = Array.isArray(value?.about?.highlights) ? value.about.highlights : deep(defaultC.about.highlights);
+  for (const key of ["education","skills","interests","projects","socials"]) {
+    merged[key] = Array.isArray(value?.[key]) ? value[key] : deep(defaultC[key] || []);
+  }
+  merged.settings = { ...deep(defaultC.settings), ...(value?.settings || {}) };
+  merged.settings.show = { ...deep(defaultC.settings.show), ...(value?.settings?.show || {}) };
+  merged.settings.sectionOrder = Array.isArray(value?.settings?.sectionOrder)
+    ? value.settings.sectionOrder.filter((key, i, arr) => ["about","education","skills","interests","projects","connect"].includes(key) && arr.indexOf(key) === i)
+    : deep(defaultC.settings.sectionOrder);
+  return merged;
+}
+
 function loadC() {
   try {
     const value = localStorage.getItem(KEY);
-    C = value ? JSON.parse(value) : deep(defaultC);
+    C = normalizeContent(value ? JSON.parse(value) : defaultC);
   } catch (error) {
-    C = deep(defaultC);
+    C = normalizeContent(defaultC);
   }
 }
 
@@ -286,31 +304,33 @@ function renderPanel(tab = document.querySelector(".tab.active")?.dataset.tab ||
   }
 
   if (tab === "about") {
-    html = `<h1 class="panel-title">About</h1><p class="panel-sub">Edit your introduction.</p>${inputField("Heading", ["about", "heading"])}${C.about.paragraphs.map((paragraph, index) => `<div class="item"><div class="item-head"><strong>Paragraph ${index + 1}</strong><button class="mini danger" data-del="about.${index}">Delete</button></div><textarea data-about-index="${index}">${paragraph}</textarea></div>`).join("")}<button class="add" id="addAbout">+ Add paragraph</button><h3 style="margin:22px 0 10px">About highlights</h3>${(C.about.highlights || []).map((h,i) => `<div class="item"><div class="field"><label>Label</label><input data-about-highlight="${i}.label" value="${escapeAttr(h.label)}"></div><div class="field"><label>Value</label><input data-about-highlight="${i}.value" value="${escapeAttr(h.value)}"></div><div class="field"><label>Subtext</label><input data-about-highlight="${i}.sub" value="${escapeAttr(h.sub)}"></div></div>`).join("")}`;
+    html = `<h1 class="panel-title">About</h1><p class="panel-sub">Edit your introduction.</p>${inputField("Heading", ["about", "heading"])}${C.about.paragraphs.map((paragraph, index) => `<div class="item"><div class="item-head"><strong>Paragraph ${index + 1}</strong><button class="mini danger" data-del="about.${index}">Delete</button></div><textarea data-about-index="${index}">${paragraph}</textarea></div>`).join("")}<button class="add" id="addAbout">+ Add paragraph</button><h3 style="margin:22px 0 10px">About highlights</h3>${(C.about.highlights || []).map((h,i) => `<div class="item"><div class="item-head"><strong>Highlight ${i + 1}</strong><button class="mini danger" data-del="about.highlights.${i}">Delete</button></div><div class="field"><label>Label</label><input data-about-highlight="${i}.label" value="${escapeAttr(h.label)}"></div><div class="field"><label>Value</label><input data-about-highlight="${i}.value" value="${escapeAttr(h.value)}"></div><div class="field"><label>Subtext</label><input data-about-highlight="${i}.sub" value="${escapeAttr(h.sub)}"></div></div>`).join("")}<button class="add" id="addHighlight">+ Add highlight</button>`;
   }
 
   if (tab === "education") {
-    html = `<h1 class="panel-title">Academic Background</h1><p class="panel-sub">Add, remove or edit education entries.</p>${C.education.map((entry, index) => `<div class="item"><div class="item-head"><strong>${index + 1}. ${entry.title || "Education"}</strong><button class="mini danger" data-del="education.${index}">Delete</button></div><div class="field"><label>Title</label><input data-edu="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Institution</label><input data-edu="${index}.institution" value="${escapeAttr(entry.institution)}"></div><div class="row"><div class="field"><label>Period</label><input data-edu="${index}.period" value="${escapeAttr(entry.period)}"></div><div class="field"><label>Current?</label><label class="check"><input type="checkbox" data-edu-check="${index}" ${entry.current ? "checked" : ""}> Show CURRENT tag</label></div></div><div class="field"><label>Description</label><textarea data-edu="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Coursework (comma separated)</label><input data-edu-courses="${index}" value="${escapeAttr((entry.courseHighlights || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addEdu">+ Add education</button>`;
+    html = `<h1 class="panel-title">Academic Background</h1><p class="panel-sub">Add, remove or edit education entries.</p>${(C.education || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${index + 1}. ${entry.title || "Education"}</strong><button class="mini danger" data-del="education.${index}">Delete</button></div><div class="field"><label>Title</label><input data-edu="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Institution</label><input data-edu="${index}.institution" value="${escapeAttr(entry.institution)}"></div><div class="row"><div class="field"><label>Period</label><input data-edu="${index}.period" value="${escapeAttr(entry.period)}"></div><div class="field"><label>Current?</label><label class="check"><input type="checkbox" data-edu-check="${index}" ${entry.current ? "checked" : ""}> Show CURRENT tag</label></div></div><div class="field"><label>Description</label><textarea data-edu="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Coursework (comma separated)</label><input data-edu-courses="${index}" value="${escapeAttr((entry.courseHighlights || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addEdu">+ Add education</button>`;
   }
 
   if (tab === "skills") {
-    html = `<h1 class="panel-title">Skills</h1><p class="panel-sub">Group your finance, tools, and tech stack skills.</p>${C.skills.map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.category || "Skill Group"}</strong><button class="mini danger" data-del="skills.${index}">Delete</button></div><div class="field"><label>Category</label><input data-skill="${index}.category" value="${escapeAttr(entry.category)}"></div><div class="field"><label>Description</label><textarea data-skill="${index}.subtitle">${entry.subtitle || ""}</textarea></div><div class="field"><label>Count label</label><input data-skill="${index}.countLabel" value="${escapeAttr(entry.countLabel || "")}"></div><div class="field"><label>Items (comma separated)</label><input data-skill-items="${index}" value="${escapeAttr((entry.items || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addSkill">+ Add skill group</button>`;
+    html = `<h1 class="panel-title">Skills</h1><p class="panel-sub">Group your finance, tools, and tech stack skills.</p>${(C.skills || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.category || "Skill Group"}</strong><button class="mini danger" data-del="skills.${index}">Delete</button></div><div class="field"><label>Category</label><input data-skill="${index}.category" value="${escapeAttr(entry.category)}"></div><div class="field"><label>Description</label><textarea data-skill="${index}.subtitle">${entry.subtitle || ""}</textarea></div><div class="field"><label>Count label</label><input data-skill="${index}.countLabel" value="${escapeAttr(entry.countLabel || "")}"></div><div class="field"><label>Items (comma separated)</label><input data-skill-items="${index}" value="${escapeAttr((entry.items || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addSkill">+ Add skill group</button>`;
   }
 
   if (tab === "interests") {
-    html = `<h1 class="panel-title">Interests</h1><p class="panel-sub">Your interest cards.</p>${C.interests.map((entry, index) => `<div class="item"><div class="item-head"><strong>Interest ${index + 1}</strong><button class="mini danger" data-del="interests.${index}">Delete</button></div><div class="field"><label>Title</label><input data-interest="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Subtitle</label><input data-interest="${index}.subtitle" value="${escapeAttr(entry.subtitle || "")}"></div><div class="field"><label>Description</label><textarea data-interest="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Topic tags (comma separated)</label><input data-interest-tags="${index}" value="${escapeAttr((entry.keyPoints || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addInterest">+ Add interest</button>`;
+    html = `<h1 class="panel-title">Interests</h1><p class="panel-sub">Your interest cards.</p>${(C.interests || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>Interest ${index + 1}</strong><button class="mini danger" data-del="interests.${index}">Delete</button></div><div class="field"><label>Title</label><input data-interest="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Subtitle</label><input data-interest="${index}.subtitle" value="${escapeAttr(entry.subtitle || "")}"></div><div class="field"><label>Description</label><textarea data-interest="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Topic tags (comma separated)</label><input data-interest-tags="${index}" value="${escapeAttr((entry.keyPoints || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addInterest">+ Add interest</button>`;
   }
 
   if (tab === "projects") {
-    html = `<h1 class="panel-title">Projects</h1><p class="panel-sub">Add work examples with tools and outcomes.</p>${C.projects.map((project, index) => `<div class="item"><div class="item-head"><strong>${project.title || "Project"}</strong><button class="mini danger" data-del="projects.${index}">Delete</button></div><div class="field"><label>Title</label><input data-project="${index}.title" value="${escapeAttr(project.title)}"></div><div class="field"><label>Summary</label><textarea data-project="${index}.summary">${project.summary}</textarea></div><div class="field"><label>Tools</label><input data-project="${index}.tools" value="${escapeAttr(project.tools)}"></div><div class="field"><label>Outcome</label><textarea data-project="${index}.outcome">${project.outcome}</textarea></div><div class="field"><label>Project URL (optional)</label><input data-project="${index}.url" value="${escapeAttr(project.url)}"></div></div>`).join("")}<button class="add" id="addProject">+ Add project</button>`;
+    html = `<h1 class="panel-title">Projects</h1><p class="panel-sub">Add work examples with tools and outcomes.</p>${(C.projects || []).map((project, index) => `<div class="item"><div class="item-head"><strong>${project.title || "Project"}</strong><button class="mini danger" data-del="projects.${index}">Delete</button></div><div class="field"><label>Title</label><input data-project="${index}.title" value="${escapeAttr(project.title)}"></div><div class="field"><label>Summary</label><textarea data-project="${index}.summary">${project.summary}</textarea></div><div class="field"><label>Tools</label><input data-project="${index}.tools" value="${escapeAttr(project.tools)}"></div><div class="field"><label>Outcome</label><textarea data-project="${index}.outcome">${project.outcome}</textarea></div><div class="field"><label>Project URL (optional)</label><input data-project="${index}.url" value="${escapeAttr(project.url)}"></div></div>`).join("")}<button class="add" id="addProject">+ Add project</button>`;
   }
 
   if (tab === "socials") {
-    html = `<h1 class="panel-title">Socials</h1><p class="panel-sub">Edit links shown on your site.</p>${C.socials.map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.name || "Social"}</strong><button class="mini danger" data-del="socials.${index}">Delete</button></div><div class="row"><div class="field"><label>Name</label><input data-social="${index}.name" value="${escapeAttr(entry.name)}"></div><div class="field"><label>Handle / display text</label><input data-social="${index}.handle" value="${escapeAttr(entry.handle)}"></div></div><div class="field"><label>URL</label><input data-social="${index}.url" value="${escapeAttr(entry.url)}"></div></div>`).join("")}<button class="add" id="addSocial">+ Add social link</button>`;
+    html = `<h1 class="panel-title">Socials</h1><p class="panel-sub">Edit links shown on your site.</p>${(C.socials || []).map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.name || "Social"}</strong><span><button class="mini" data-social-up="${index}" ${index===0?"disabled":""}>↑</button><button class="mini" data-social-down="${index}" ${index===C.socials.length-1?"disabled":""}>↓</button><button class="mini danger" data-del="socials.${index}">Delete</button></span></div><div class="row"><div class="field"><label>Name</label><input data-social="${index}.name" value="${escapeAttr(entry.name)}"></div><div class="field"><label>Handle / display text</label><input data-social="${index}.handle" value="${escapeAttr(entry.handle)}"></div></div><div class="field"><label>URL</label><input data-social="${index}.url" value="${escapeAttr(entry.url)}"></div></div>`).join("")}<button class="add" id="addSocial">+ Add social link</button>`;
   }
 
   if (tab === "design") {
-    html = `<h1 class="panel-title">Design & Sections</h1><p class="panel-sub">Control colors, visibility, and section order.</p><div class="swatches">${inputField("Accent", ["settings", "accent"])}${inputField("Background", ["settings", "background"])}${inputField("Text", ["settings", "text"])}${inputField("Muted text", ["settings", "muted"])}</div><h3 style="margin:18px 0 10px">Show / hide</h3>${["hero", "about", "education", "skills", "interests", "projects", "connect"].map(key => `<label class="check" style="margin:10px 0"><input type="checkbox" data-toggle="${key}" ${C.settings.show[key] ? "checked" : ""}> ${key[0].toUpperCase() + key.slice(1)}</label>`).join("")}<h3 style="margin:22px 0 10px">Section order</h3><div class="section-order">${C.settings.sectionOrder.map((key, index) => `<div class="order-row"><span>${sectionName(key)}</span><span><button class="mini" data-up="${index}">↑</button><button class="mini" data-down="${index}">↓</button></span></div>`).join("")}</div>`;
+    const allSections = ["about","education","skills","interests","projects","connect"];
+    const available = allSections.filter(key => !C.settings.sectionOrder.includes(key));
+    html = `<h1 class="panel-title">Design & Sections</h1><p class="panel-sub">Control visibility, add or remove page sections, and change their order.</p><div class="swatches">${inputField("Accent", ["settings", "accent"])}${inputField("Background", ["settings", "background"])}${inputField("Text", ["settings", "text"])}${inputField("Muted text", ["settings", "muted"])}</div><h3 style="margin:18px 0 10px">Visibility</h3><label class="check" style="margin:10px 0"><input type="checkbox" data-toggle="hero" ${C.settings.show.hero ? "checked" : ""}> Hero</label>${allSections.map(key => `<label class="check" style="margin:10px 0"><input type="checkbox" data-toggle="${key}" ${C.settings.show[key] ? "checked" : ""}> ${sectionName(key)}</label>`).join("")}<h3 style="margin:22px 0 10px">Add a section</h3><div class="row"><div class="field"><select id="addSectionSelect" class="editor-select">${available.map(key => `<option value="${key}">${sectionName(key)}</option>`).join("")}</select></div><div class="field"><button class="add" id="addSection" ${available.length ? "" : "disabled"}>+ Add section</button></div></div><h3 style="margin:22px 0 10px">Page section order</h3><div class="section-order">${C.settings.sectionOrder.map((key, index) => `<div class="order-row"><span>${sectionName(key)}</span><span><button class="mini" data-up="${index}" ${index===0?"disabled":""}>↑</button><button class="mini" data-down="${index}" ${index===C.settings.sectionOrder.length-1?"disabled":""}>↓</button><button class="mini danger" data-remove-section="${key}">Remove</button></span></div>`).join("")}</div><div class="notice">Removing a section hides it from the page order. Its saved content is kept and can be added again.</div>`;
   }
 
   panel.innerHTML = html;
@@ -392,14 +412,21 @@ function bindExtra() {
 
   panel.querySelectorAll("[data-del]").forEach(button => {
     button.onclick = () => {
-      const [arrayName, index] = button.dataset.del.split(".");
-      C[arrayName].splice(+index, 1);
+      const parts = button.dataset.del.split(".");
+      if (parts.length === 3) C[parts[0]][parts[1]].splice(+parts[2], 1);
+      else C[parts[0]].splice(+parts[1], 1);
       save();
     };
   });
 
   document.getElementById("addAbout")?.addEventListener("click", () => {
     C.about.paragraphs.push("New paragraph");
+    save();
+  });
+
+  document.getElementById("addHighlight")?.addEventListener("click", () => {
+    C.about.highlights = C.about.highlights || [];
+    C.about.highlights.push({ label: "New label", value: "New value", sub: "" });
     save();
   });
 
@@ -426,6 +453,42 @@ function bindExtra() {
   document.getElementById("addSocial")?.addEventListener("click", () => {
     C.socials.push({ name: "New link", handle: "@username", url: "https://" });
     save();
+  });
+
+  document.getElementById("addSection")?.addEventListener("click", () => {
+    const key = document.getElementById("addSectionSelect")?.value;
+    if (key && !C.settings.sectionOrder.includes(key)) {
+      C.settings.sectionOrder.push(key);
+      C.settings.show[key] = true;
+      save();
+    }
+  });
+
+  panel.querySelectorAll("[data-remove-section]").forEach(button => {
+    button.onclick = () => {
+      const key = button.dataset.removeSection;
+      C.settings.sectionOrder = C.settings.sectionOrder.filter(item => item !== key);
+      save();
+    };
+  });
+
+  panel.querySelectorAll("[data-social-up]").forEach(button => {
+    button.onclick = () => {
+      const index = Number(button.dataset.socialUp);
+      if (index > 0) {
+        [C.socials[index - 1], C.socials[index]] = [C.socials[index], C.socials[index - 1]];
+        save();
+      }
+    };
+  });
+  panel.querySelectorAll("[data-social-down]").forEach(button => {
+    button.onclick = () => {
+      const index = Number(button.dataset.socialDown);
+      if (index < C.socials.length - 1) {
+        [C.socials[index + 1], C.socials[index]] = [C.socials[index], C.socials[index + 1]];
+        save();
+      }
+    };
   });
 
   panel.querySelectorAll("[data-up]").forEach(button => {
