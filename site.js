@@ -11,11 +11,10 @@ const fallback = {
   },
   "about": {
     "heading": "A little about me.",
-    "label": "01 — ABOUT ME",
     "paragraphs": [
-      "I am currently pursuing a Bachelor of Commerce (Computer Applications) at J.H. Govt. P.G. College, Betul. My coursework brings together commerce subjects such as accounting, taxation, and business law with computer applications, e-commerce, and digital marketing.",
-      "I am interested in how financial principles and digital technology work together. I enjoy exploring how software, spreadsheets, automation, and structured data can support business operations and better decision-making.",
-      "Alongside my degree, I am building practical skills through self-learning and hands-on projects. I am interested in opportunities to learn and contribute in finance-tech, digital commerce, and business operations."
+      "I am currently pursuing a Bachelor of Commerce (Computer Applications) at J.H. Govt. P.G. College, Betul. My academic journey combines core commerce disciplines—financial accounting, taxation, and business law—with practical computing tools that empower modern enterprises.",
+      "I am deeply drawn to the intersection where financial principles meet digital technology. Rather than treating finance and computing as isolated disciplines, I explore how software, automation, and structured data systems optimize business operations, increase financial transparency, and improve decision-making.",
+      "Beyond college coursework, I am a dedicated self-learner continuously building real-world competency across financial analysis, front-end web technologies, and collaborative workflows. I am actively seeking internship opportunities in finance-tech, digital commerce, and business operations."
     ],
     "highlights": [
       {
@@ -29,9 +28,9 @@ const fallback = {
         "sub": "Betul, Madhya Pradesh"
       },
       {
-        "label": "Career Focus",
-        "value": "Finance & Technology",
-        "sub": "Learning and exploring opportunities"
+        "label": "Availability",
+        "value": "Open for Internships",
+        "sub": "Finance-Tech & Digital Biz"
       }
     ]
   },
@@ -41,15 +40,14 @@ const fallback = {
       "title": "B.Com (Computer Applications)",
       "institution": "J.H. Govt. P.G. College, Betul",
       "period": "Jul 2025 — Present",
-      "detail": "Pursuing a Bachelor of Commerce with Computer Applications, combining commerce foundations with computing, e-commerce, and digital business subjects.",
+      "detail": "Currently pursuing a Bachelor of Commerce with specialization in Computer Applications. Blending accounting principles, financial management, business regulation, and taxation with computing systems, e-commerce applications, and digital business operations.",
       "courseHighlights": [
         "Financial Accounting",
-        "Cost Accounting",
-        "Business Law",
-        "Business Mathematics",
-        "E-Accounting & GST",
-        "Computer Applications",
-        "E-Commerce & Digital Marketing"
+        "Business Law & Regulatory Framework",
+        "Computer Applications in Business",
+        "Tax Basics & Statutory Concepts",
+        "E-Commerce & Digital Systems",
+        "Market Dynamics"
       ]
     },
     {
@@ -57,13 +55,12 @@ const fallback = {
       "title": "Higher Secondary (XII), Commerce",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
       "period": "Jun 2023 — Apr 2025",
-      "detail": "Studied commerce with a foundation in accountancy, business studies, economics, and languages.",
+      "detail": "Built a solid academic foundation across double-entry bookkeeping, corporate accounting concepts, principles of management, macroeconomic dynamics, and professional communication.",
       "courseHighlights": [
-        "Accountancy",
-        "Business Studies",
-        "Economics",
-        "English",
-        "Hindi"
+        "Accountancy & Bookkeeping",
+        "Business Studies & Management",
+        "Micro & Macro Economics",
+        "English & Professional Communication"
       ]
     },
     {
@@ -71,31 +68,31 @@ const fallback = {
       "title": "Secondary School (X)",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
       "period": "Mar 2022 — May 2023",
-      "detail": "Completed secondary education with coursework across mathematics, science, social studies, and languages.",
+      "detail": "Completed secondary education with strong fundamentals across quantitative mathematics, general sciences, social studies, and language arts, preparing for advanced commerce studies.",
       "courseHighlights": [
-        "Mathematics",
-        "Science",
-        "Social Studies",
-        "Languages"
+        "Quantitative Mathematics",
+        "General Science",
+        "Social Sciences",
+        "Language & Composition"
       ]
     }
   ],
   "skills": [
     {
-      "category": "Finance & Commerce",
-      "subtitle": "Academic foundations and areas being developed through coursework and practice.",
-      "countLabel": "4 Areas",
+      "category": "Finance",
+      "subtitle": "Ledger systems, statutory concepts, regulatory compliance, and market evaluation.",
+      "countLabel": "4 Core Skills",
       "items": [
         "Financial Accounting",
-        "Cost Accounting",
+        "Tax Basics",
         "Business Law",
-        "Taxation & GST"
+        "Market Research"
       ]
     },
     {
-      "category": "Digital Tools",
-      "subtitle": "Tools used or explored for productivity, documentation, and visual communication.",
-      "countLabel": "4 Tools",
+      "category": "Tools",
+      "subtitle": "Spreadsheet modeling, collaborative workspaces, visual communication, and documentation.",
+      "countLabel": "4 Essential Tools",
       "items": [
         "Excel",
         "Google Sheets",
@@ -104,14 +101,14 @@ const fallback = {
       ]
     },
     {
-      "category": "Web & Workflow",
-      "subtitle": "Foundational web technologies and version-control learning.",
-      "countLabel": "4 Areas",
+      "category": "Tech Stack",
+      "subtitle": "Semantic web markup, responsive design styling, client scripting, and version control.",
+      "countLabel": "4 Core Technologies",
       "items": [
-        "HTML & CSS",
-        "JavaScript (Learning)",
-        "Git",
-        "GitHub"
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Git & GitHub"
       ]
     }
   ],
@@ -119,37 +116,37 @@ const fallback = {
     {
       "number": "01",
       "title": "Finance & Financial Markets",
-      "subtitle": "Markets, Analysis & Valuation",
-      "detail": "Interested in financial markets, investment concepts, financial statements, and understanding how businesses and markets make financial decisions.",
+      "subtitle": "Capital Markets & Valuation",
+      "detail": "Deeply interested in capital markets, investment mechanisms, corporate valuation, and macroeconomic dynamics. Analyzing how financial statements, interest rates, and liquidity drive Indian and global markets.",
       "keyPoints": [
-        "Financial Statements",
         "Capital Markets",
-        "Investments",
-        "Valuation"
+        "Financial Statements",
+        "Corporate Valuation",
+        "Market Dynamics"
       ]
     },
     {
       "number": "02",
       "title": "Technology",
       "subtitle": "Digital Business & Automation",
-      "detail": "Exploring how digital tools, software, spreadsheets, and automated workflows can improve business processes and support finance-related work.",
+      "detail": "Exploring how digital tools, software architectures, and automated workflows are transforming commerce. Passionate about identifying software solutions that eliminate operational friction in finance and enterprise.",
       "keyPoints": [
-        "FinTech",
+        "FinTech Systems",
         "Workflow Automation",
-        "Spreadsheets",
+        "Spreadsheet Modeling",
         "Digital Business"
       ]
     },
     {
       "number": "03",
       "title": "Web3 & Blockchain",
-      "subtitle": "Decentralized Technology",
-      "detail": "Interested in blockchain technology, decentralized applications, and how distributed systems may shape digital assets and financial services.",
+      "subtitle": "Decentralized Infrastructure",
+      "detail": "Investigating distributed ledger protocols, cryptographic consensus, smart contract execution, and the architecture of open financial systems that enable borderless, trustless transactions.",
       "keyPoints": [
-        "Blockchain",
+        "Blockchain Protocols",
         "Smart Contracts",
-        "Decentralized Apps",
-        "Digital Assets"
+        "Decentralized Systems",
+        "Open Finance"
       ]
     }
   ],

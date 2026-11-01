@@ -7,20 +7,37 @@ const deep = value => JSON.parse(JSON.stringify(value));
 const defaultC = {
   "site": {
     "name": "Himanshu Chandelkar",
-    "title": "Commerce student exploring finance and technology.",
+    "title": "B.Com (Computer Applications) Student at Jaywanti Haksar Post Graduation College, Betul",
     "goal": "Currently focused on internship opportunities in finance-tech and digital business.",
     "location": "Betul, Madhya Pradesh, India",
     "domain": "himanshuchandelkar.social",
-    "primaryCtaLabel": "View Projects",
-    "primaryCtaTarget": "#projects",
+    "primaryCtaLabel": "Connect",
+    "primaryCtaTarget": "#connect",
     "resumeUrl": "./resume.pdf"
   },
   "about": {
     "heading": "A little about me.",
     "paragraphs": [
-      "I am currently pursuing a Bachelor of Commerce (Computer Applications) with a strong interest in business, finance, and technology. My academic journey combines accounting, taxation, business law, e-commerce, and digital marketing while I continue to explore emerging technologies such as artificial intelligence and blockchain.",
-      "I enjoy learning how technology is transforming businesses and financial systems, and I am focused on continuously developing practical skills through academic coursework and self-learning.",
-      "I am always open to connecting with professionals and fellow learners who share an interest in business, finance, and technology."
+      "I am currently pursuing a Bachelor of Commerce (Computer Applications) at J.H. Govt. P.G. College, Betul. My academic journey combines core commerce disciplines—financial accounting, taxation, and business law—with practical computing tools that empower modern enterprises.",
+      "I am deeply drawn to the intersection where financial principles meet digital technology. Rather than treating finance and computing as isolated disciplines, I explore how software, automation, and structured data systems optimize business operations, increase financial transparency, and improve decision-making.",
+      "Beyond college coursework, I am a dedicated self-learner continuously building real-world competency across financial analysis, front-end web technologies, and collaborative workflows. I am actively seeking internship opportunities in finance-tech, digital commerce, and business operations."
+    ],
+    "highlights": [
+      {
+        "label": "Degree Program",
+        "value": "B.Com (Computer Applications)",
+        "sub": "Undergraduate Degree"
+      },
+      {
+        "label": "College",
+        "value": "J.H. Govt. P.G. College",
+        "sub": "Betul, Madhya Pradesh"
+      },
+      {
+        "label": "Availability",
+        "value": "Open for Internships",
+        "sub": "Finance-Tech & Digital Biz"
+      }
     ]
   },
   "education": [
@@ -29,72 +46,114 @@ const defaultC = {
       "title": "B.Com (Computer Applications)",
       "institution": "J.H. Govt. P.G. College, Betul",
       "period": "Jul 2025 — Present",
-      "detail": "Currently pursuing a Bachelor of Commerce (Computer Applications), developing knowledge in accounting, finance, business, technology, e-commerce, digital marketing, and taxation through academic coursework and practical learning."
+      "detail": "Currently pursuing a Bachelor of Commerce with specialization in Computer Applications. Blending accounting principles, financial management, business regulation, and taxation with computing systems, e-commerce applications, and digital business operations.",
+      "courseHighlights": [
+        "Financial Accounting",
+        "Business Law & Regulatory Framework",
+        "Computer Applications in Business",
+        "Tax Basics & Statutory Concepts",
+        "E-Commerce & Digital Systems",
+        "Market Dynamics"
+      ]
     },
     {
       "current": false,
       "title": "Higher Secondary (XII), Commerce",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
       "period": "Jun 2023 — Apr 2025",
-      "detail": "Developed a strong foundation in accounting, business studies, economics, and communication, providing the basis for higher studies in commerce and finance."
+      "detail": "Built a solid academic foundation across double-entry bookkeeping, corporate accounting concepts, principles of management, macroeconomic dynamics, and professional communication.",
+      "courseHighlights": [
+        "Accountancy & Bookkeeping",
+        "Business Studies & Management",
+        "Micro & Macro Economics",
+        "English & Professional Communication"
+      ]
     },
     {
       "current": false,
       "title": "Secondary School (X)",
       "institution": "St. Thomas Mission HR. Sec. School, Amla",
       "period": "Mar 2022 — May 2023",
-      "detail": "Completed secondary education with a strong academic foundation across mathematics, science, social studies, and languages, preparing for higher secondary studies in commerce."
+      "detail": "Completed secondary education with strong fundamentals across quantitative mathematics, general sciences, social studies, and language arts, preparing for advanced commerce studies.",
+      "courseHighlights": [
+        "Quantitative Mathematics",
+        "General Science",
+        "Social Sciences",
+        "Language & Composition"
+      ]
     }
   ],
   "skills": [
     {
       "category": "Finance",
-      "items": ["Financial Accounting", "Tax Basics", "Business Law", "Market Research"]
+      "subtitle": "Ledger systems, statutory concepts, regulatory compliance, and market evaluation.",
+      "countLabel": "4 Core Skills",
+      "items": [
+        "Financial Accounting",
+        "Tax Basics",
+        "Business Law",
+        "Market Research"
+      ]
     },
     {
       "category": "Tools",
-      "items": ["Excel", "Google Sheets", "Canva", "Notion"]
+      "subtitle": "Spreadsheet modeling, collaborative workspaces, visual communication, and documentation.",
+      "countLabel": "4 Essential Tools",
+      "items": [
+        "Excel",
+        "Google Sheets",
+        "Canva",
+        "Notion"
+      ]
     },
     {
       "category": "Tech Stack",
-      "items": ["HTML", "CSS", "JavaScript", "Git & GitHub"]
+      "subtitle": "Semantic web markup, responsive design styling, client scripting, and version control.",
+      "countLabel": "4 Core Technologies",
+      "items": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Git & GitHub"
+      ]
     }
   ],
   "interests": [
     {
+      "number": "01",
       "title": "Finance & Financial Markets",
-      "detail": "Interested in finance, financial markets, investments, and understanding how financial systems work."
+      "subtitle": "Capital Markets & Valuation",
+      "detail": "Deeply interested in capital markets, investment mechanisms, corporate valuation, and macroeconomic dynamics. Analyzing how financial statements, interest rates, and liquidity drive Indian and global markets.",
+      "keyPoints": [
+        "Capital Markets",
+        "Financial Statements",
+        "Corporate Valuation",
+        "Market Dynamics"
+      ]
     },
     {
+      "number": "02",
       "title": "Technology",
-      "detail": "Exploring technology and the ways digital tools are changing businesses and financial systems."
+      "subtitle": "Digital Business & Automation",
+      "detail": "Exploring how digital tools, software architectures, and automated workflows are transforming commerce. Passionate about identifying software solutions that eliminate operational friction in finance and enterprise.",
+      "keyPoints": [
+        "FinTech Systems",
+        "Workflow Automation",
+        "Spreadsheet Modeling",
+        "Digital Business"
+      ]
     },
     {
+      "number": "03",
       "title": "Web3 & Blockchain",
-      "detail": "Interested in blockchain technology, decentralized applications, and the broader Web3 ecosystem."
-    }
-  ],
-  "projects": [
-    {
-      "title": "Personal Portfolio Website",
-      "summary": "Built and deployed a responsive portfolio website to present education, skills, and profile links.",
-      "tools": "HTML, CSS, JavaScript, GitHub Pages",
-      "outcome": "Created a maintainable online profile with editable content and faster updates.",
-      "url": "https://github.com/himanshuchandelkar/himanshuchandelkar.github.io"
-    },
-    {
-      "title": "Commerce Notes Hub",
-      "summary": "Organized semester-wise commerce notes and references in a structured repository for quick revision.",
-      "tools": "Google Docs, Notion, GitHub",
-      "outcome": "Improved revision speed and made shared study resources easier to navigate.",
-      "url": ""
-    },
-    {
-      "title": "Market Observation Tracker",
-      "summary": "Tracked daily market observations and company updates to improve consistency in financial learning.",
-      "tools": "Google Sheets, Data Visualization",
-      "outcome": "Built a repeatable workflow for analyzing trends and summarizing insights.",
-      "url": ""
+      "subtitle": "Decentralized Infrastructure",
+      "detail": "Investigating distributed ledger protocols, cryptographic consensus, smart contract execution, and the architecture of open financial systems that enable borderless, trustless transactions.",
+      "keyPoints": [
+        "Blockchain Protocols",
+        "Smart Contracts",
+        "Decentralized Systems",
+        "Open Finance"
+      ]
     }
   ],
   "socials": [
@@ -138,7 +197,13 @@ const defaultC = {
       "projects": true,
       "connect": true
     },
-    "sectionOrder": ["about", "education", "skills", "interests", "projects", "connect"]
+    "sectionOrder": [
+      "about",
+      "education",
+      "skills",
+      "interests",
+      "connect"
+    ]
   }
 };
 
@@ -205,7 +270,7 @@ function textareaField(label, path) {
 function sectionName(key) {
   return ({
     about: "About",
-    education: "Education",
+    education: "Academic Background",
     skills: "Skills",
     interests: "Interests",
     projects: "Projects",
@@ -221,19 +286,19 @@ function renderPanel(tab = document.querySelector(".tab.active")?.dataset.tab ||
   }
 
   if (tab === "about") {
-    html = `<h1 class="panel-title">About</h1><p class="panel-sub">Edit your introduction.</p>${inputField("Heading", ["about", "heading"])}${C.about.paragraphs.map((paragraph, index) => `<div class="item"><div class="item-head"><strong>Paragraph ${index + 1}</strong><button class="mini danger" data-del="about.${index}">Delete</button></div><textarea data-about-index="${index}">${paragraph}</textarea></div>`).join("")}<button class="add" id="addAbout">+ Add paragraph</button>`;
+    html = `<h1 class="panel-title">About</h1><p class="panel-sub">Edit your introduction.</p>${inputField("Heading", ["about", "heading"])}${C.about.paragraphs.map((paragraph, index) => `<div class="item"><div class="item-head"><strong>Paragraph ${index + 1}</strong><button class="mini danger" data-del="about.${index}">Delete</button></div><textarea data-about-index="${index}">${paragraph}</textarea></div>`).join("")}<button class="add" id="addAbout">+ Add paragraph</button><h3 style="margin:22px 0 10px">About highlights</h3>${(C.about.highlights || []).map((h,i) => `<div class="item"><div class="field"><label>Label</label><input data-about-highlight="${i}.label" value="${escapeAttr(h.label)}"></div><div class="field"><label>Value</label><input data-about-highlight="${i}.value" value="${escapeAttr(h.value)}"></div><div class="field"><label>Subtext</label><input data-about-highlight="${i}.sub" value="${escapeAttr(h.sub)}"></div></div>`).join("")}`;
   }
 
   if (tab === "education") {
-    html = `<h1 class="panel-title">Education</h1><p class="panel-sub">Add, remove or edit education entries.</p>${C.education.map((entry, index) => `<div class="item"><div class="item-head"><strong>${index + 1}. ${entry.title || "Education"}</strong><button class="mini danger" data-del="education.${index}">Delete</button></div><div class="field"><label>Title</label><input data-edu="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Institution</label><input data-edu="${index}.institution" value="${escapeAttr(entry.institution)}"></div><div class="row"><div class="field"><label>Period</label><input data-edu="${index}.period" value="${escapeAttr(entry.period)}"></div><div class="field"><label>Current?</label><label class="check"><input type="checkbox" data-edu-check="${index}" ${entry.current ? "checked" : ""}> Show CURRENT tag</label></div></div><div class="field"><label>Description</label><textarea data-edu="${index}.detail">${entry.detail}</textarea></div></div>`).join("")}<button class="add" id="addEdu">+ Add education</button>`;
+    html = `<h1 class="panel-title">Academic Background</h1><p class="panel-sub">Add, remove or edit education entries.</p>${C.education.map((entry, index) => `<div class="item"><div class="item-head"><strong>${index + 1}. ${entry.title || "Education"}</strong><button class="mini danger" data-del="education.${index}">Delete</button></div><div class="field"><label>Title</label><input data-edu="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Institution</label><input data-edu="${index}.institution" value="${escapeAttr(entry.institution)}"></div><div class="row"><div class="field"><label>Period</label><input data-edu="${index}.period" value="${escapeAttr(entry.period)}"></div><div class="field"><label>Current?</label><label class="check"><input type="checkbox" data-edu-check="${index}" ${entry.current ? "checked" : ""}> Show CURRENT tag</label></div></div><div class="field"><label>Description</label><textarea data-edu="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Coursework (comma separated)</label><input data-edu-courses="${index}" value="${escapeAttr((entry.courseHighlights || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addEdu">+ Add education</button>`;
   }
 
   if (tab === "skills") {
-    html = `<h1 class="panel-title">Skills</h1><p class="panel-sub">Group your finance, tools, and tech stack skills.</p>${C.skills.map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.category || "Skill Group"}</strong><button class="mini danger" data-del="skills.${index}">Delete</button></div><div class="field"><label>Category</label><input data-skill="${index}.category" value="${escapeAttr(entry.category)}"></div><div class="field"><label>Items (comma separated)</label><input data-skill-items="${index}" value="${escapeAttr((entry.items || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addSkill">+ Add skill group</button>`;
+    html = `<h1 class="panel-title">Skills</h1><p class="panel-sub">Group your finance, tools, and tech stack skills.</p>${C.skills.map((entry, index) => `<div class="item"><div class="item-head"><strong>${entry.category || "Skill Group"}</strong><button class="mini danger" data-del="skills.${index}">Delete</button></div><div class="field"><label>Category</label><input data-skill="${index}.category" value="${escapeAttr(entry.category)}"></div><div class="field"><label>Description</label><textarea data-skill="${index}.subtitle">${entry.subtitle || ""}</textarea></div><div class="field"><label>Count label</label><input data-skill="${index}.countLabel" value="${escapeAttr(entry.countLabel || "")}"></div><div class="field"><label>Items (comma separated)</label><input data-skill-items="${index}" value="${escapeAttr((entry.items || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addSkill">+ Add skill group</button>`;
   }
 
   if (tab === "interests") {
-    html = `<h1 class="panel-title">Interests</h1><p class="panel-sub">Your interest cards.</p>${C.interests.map((entry, index) => `<div class="item"><div class="item-head"><strong>Interest ${index + 1}</strong><button class="mini danger" data-del="interests.${index}">Delete</button></div><div class="field"><label>Title</label><input data-interest="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Description</label><textarea data-interest="${index}.detail">${entry.detail}</textarea></div></div>`).join("")}<button class="add" id="addInterest">+ Add interest</button>`;
+    html = `<h1 class="panel-title">Interests</h1><p class="panel-sub">Your interest cards.</p>${C.interests.map((entry, index) => `<div class="item"><div class="item-head"><strong>Interest ${index + 1}</strong><button class="mini danger" data-del="interests.${index}">Delete</button></div><div class="field"><label>Title</label><input data-interest="${index}.title" value="${escapeAttr(entry.title)}"></div><div class="field"><label>Subtitle</label><input data-interest="${index}.subtitle" value="${escapeAttr(entry.subtitle || "")}"></div><div class="field"><label>Description</label><textarea data-interest="${index}.detail">${entry.detail}</textarea></div><div class="field"><label>Topic tags (comma separated)</label><input data-interest-tags="${index}" value="${escapeAttr((entry.keyPoints || []).join(", "))}"></div></div>`).join("")}<button class="add" id="addInterest">+ Add interest</button>`;
   }
 
   if (tab === "projects") {
@@ -269,6 +334,12 @@ function bindExtra() {
     };
   });
 
+  panel.querySelectorAll("[data-about-highlight]").forEach(element => {
+    element.oninput = () => { const [index,key] = element.dataset.aboutHighlight.split("."); C.about.highlights[+index][key] = element.value; renderPreview(); };
+  });
+  panel.querySelectorAll("[data-edu-courses]").forEach(element => {
+    element.oninput = () => { C.education[+element.dataset.eduCourses].courseHighlights = element.value.split(",").map(v=>v.trim()).filter(Boolean); renderPreview(); };
+  });
   panel.querySelectorAll("[data-edu-check]").forEach(element => {
     element.onchange = () => {
       C.education[+element.dataset.eduCheck].current = element.checked;
@@ -292,6 +363,9 @@ function bindExtra() {
     };
   });
 
+  panel.querySelectorAll("[data-interest-tags]").forEach(element => {
+    element.oninput = () => { C.interests[+element.dataset.interestTags].keyPoints = element.value.split(",").map(v=>v.trim()).filter(Boolean); renderPreview(); };
+  });
   panel.querySelectorAll("[data-interest]").forEach(element => {
     element.oninput = () => {
       const [index, key] = element.dataset.interest.split(".");
