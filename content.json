@@ -7,7 +7,7 @@
     "domain": "himanshuchandelkar.social",
     "primaryCtaLabel": "Connect",
     "primaryCtaTarget": "#connect",
-    "resumeUrl": "./resume.pdf"
+    "resumeUrl": "https://drive.google.com/drive/folders/15ECHIglHbZ8PV41JfFjsnMBx8zROqE5E?usp=sharing"
   },
   "about": {
     "heading": "A little about me.",
@@ -147,6 +147,11 @@
   ],
   "socials": [
     {
+      "name": "LinkedIn",
+      "handle": "himanshuchandelkar",
+      "url": "https://www.linkedin.com/in/himanshuchandelkar/"
+    },
+    {
       "name": "Instagram",
       "handle": "@himanshuchandelkar",
       "url": "https://www.instagram.com/himanshuchandelkar/"
@@ -157,19 +162,9 @@
       "url": "https://x.com/0x_HimanshuX"
     },
     {
-      "name": "LinkedIn",
-      "handle": "himanshuchandelkar",
-      "url": "https://www.linkedin.com/in/himanshuchandelkar/"
-    },
-    {
       "name": "GitHub",
       "handle": "himanshuchandelkar",
       "url": "https://github.com/himanshuchandelkar"
-    },
-    {
-      "name": "Email",
-      "handle": "contacthimanshuyt@gmail.com",
-      "url": "mailto:contacthimanshuyt@gmail.com"
     },
     {
       "name": "reddit",
@@ -180,6 +175,11 @@
       "name": "Substack",
       "handle": "@himanshuchandelkar",
       "url": "https://substack.com/@himanshuchandelkar"
+    },
+    {
+      "name": "Email",
+      "handle": "contacthimanshuyt@gmail.com",
+      "url": "mailto:contacthimanshuyt@gmail.com"
     }
   ],
   "settings": {
@@ -195,64 +195,16 @@
       "interests": true,
       "projects": false,
       "connect": true,
-      "certifications": true
+      "certifications": false
     },
     "sectionOrder": [
       "about",
       "education",
       "skills",
-      "certifications",
       "interests",
       "connect"
     ]
   },
   "projects": [],
-  "certifications": [
-    {
-      "title": "Create Your First Gemini Enterprise Application",
-      "issuer": "Google",
-      "issued": "Oct 2026",
-      "credentialId": "83d593d5-68c5-41f3-9a84-8722153c9c06",
-      "credentialUrl": "",
-      "skills": [
-        "AI Agents",
-        "Google Gemini"
-      ]
-    },
-    {
-      "title": "Develop AI-Powered Prototypes in Google AI Studio",
-      "issuer": "Google",
-      "issued": "Oct 2026",
-      "credentialId": "35ab10c4-2b59-4690-a821-74c585e096ca",
-      "credentialUrl": "",
-      "skills": [
-        "Prompt Engineering",
-        "Generative AI"
-      ]
-    },
-    {
-      "title": "Introduction to Git",
-      "issuer": "DataCamp",
-      "issued": "Sep 2026",
-      "credentialId": "",
-      "credentialUrl": "",
-      "skills": []
-    },
-    {
-      "title": "Introduction to GitHub Concepts",
-      "issuer": "DataCamp",
-      "issued": "Oct 2026",
-      "credentialId": "",
-      "credentialUrl": "",
-      "skills": []
-    },
-    {
-      "title": "Intermediate Git",
-      "issuer": "DataCamp",
-      "issued": "Oct 2026",
-      "credentialId": "",
-      "credentialUrl": "",
-      "skills": []
-    }
-  ]
+  "certifications": []
 }
