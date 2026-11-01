@@ -9,7 +9,7 @@
 
   const SECTION_LABELS = {
     about: "ABOUT ME",
-    education: "EDUCATION",
+    education: "ACADEMIC BACKGROUND",
     skills: "SKILLS",
     interests: "INTERESTS",
     projects: "PROJECTS"
@@ -60,7 +60,7 @@
       }
 
       if(key === "education"){
-        html += `<section id="education" class="section"><div class="section-label">${labels.education} — ${SECTION_LABELS.education}</div><div class="section-content"><div class="education-timeline">${(C.education || []).map(e => `<article class="education-item ${e.current ? "current" : ""}"><div class="education-marker"></div><div class="education-main">${e.current ? '<span class="tag">CURRENT</span>' : ""}<h3>${esc(e.title)}</h3><p class="institution">${esc(e.institution)}</p><p class="muted">${esc(e.period)}</p><p class="education-detail">${esc(e.detail)}</p>${(e.courseHighlights || []).length ? `<div class="course-highlights"><span class="course-label">KEY COURSEWORK & FOUNDATIONS</span><div>${e.courseHighlights.map(c => `<span>${esc(c)}</span>`).join("")}</div></div>` : ""}</div></article>`).join("")}</div></div></section>`;
+        html += `<section id="education" class="section"><div class="section-label">${labels.education} — ${SECTION_LABELS.education}</div><div class="section-content"><h2>Academic background.</h2><div class="education-timeline">${(C.education || []).map(e => `<article class="education-item ${e.current ? "current" : ""}"><div class="education-marker"></div><div class="education-main">${e.current ? '<span class="tag">CURRENT</span>' : ""}<h3>${esc(e.title)}</h3><p class="institution">${esc(e.institution)}</p><p class="muted">${esc(e.period)}</p><p class="education-detail">${esc(e.detail)}</p>${(e.courseHighlights || []).length ? `<div class="course-highlights"><span class="course-label">KEY COURSEWORK & FOUNDATIONS</span><div>${e.courseHighlights.map(c => `<span>${esc(c)}</span>`).join("")}</div></div>` : ""}</div></article>`).join("")}</div></div></section>`;
       }
 
       if(key === "skills"){
